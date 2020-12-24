@@ -18,9 +18,5 @@
   "homepage": "https://github.com/williampj/BridgeAPI-case-study#readme",
   "devDependencies": {
     "eslint": "^7.16.0"
-  },
-  "dependencies": {
-    "bootstrap": "^4.5.3",
-    "prettier": "^2.2.1"
   }
 }
