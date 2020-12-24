@@ -172,7 +172,7 @@
                   Internet of Things, and the general benefits of integrating
                   diverse business applications, the API space has grown
                   exponentially since especially the mid 2000s. ProgrammableWeb,
-                  a directory that lists public web-based APIs, documents a
+                  a directory that lists public web-based APIs, documented a
                   growth of 2000 APIs yearly to more than 23,000 by 2019.<sup
                     >[1]</sup
                   >
@@ -180,7 +180,7 @@
                   ten-fold rise in API request folders, from 3.1 to 34.9 million
                   between 2017 and 2020.<sup>[2]</sup> The integral role API
                   requests plays in the budding API economy demands tools for
-                  developers to send, receive, monitor and chain API requests.
+                  developers to send, receive, monitor, and chain API requests.
                 </p>
 
                 <h2 class="case-study-h2">1.3 Current Tools</h2>
@@ -188,20 +188,20 @@
                   Among developer tools used to <i>send</i> API requests, Postman is by
                   far the most utilized.
                 </p>
-
-                <img src="./images/postman.png" class="img-fluid mb-3" />
+                <i>Postman</i>
+                <img src="./images/postman.png" class="img-fluid mb-3 h-75 d-block" />
 
                 <p>
                   It lets users select the request type and endpoint along with
                   a host of optional settings including parameters, headers and
-                  body. It even allows for pre-request scripts whereby a request
-                  can be delayed or more advanced features like regularly
+                  body. It also allows for pre-request scripts, whereby a request
+                  can be delayed, or more advanced features like regularly
                   scheduled requests. The response is subsequently rendered with
-                  corresponding status, time, size and boy among other data.
+                  corresponding status, time, size and body among other data.
                   Postman is very intuitive to use and practically covers every
                   conceivable aspect of an API request, yet it is limited in so
                   far that any workflow involving Postman must originate with a
-                  Postman request, making it more useful as a testing tool for
+                  Postman request - making it more useful as a testing tool for
                   an API interface. Any need to integrate workflows triggered by
                   webhooks will therefore require other tools.
                 </p>
@@ -215,7 +215,7 @@
                   coded or include data from the incoming request.
                 </p>
                 <i>Hookbin.com</i>
-                <img src="./images/hookbin.png" class="img-fluid mb-3" />
+                <img src="./images/hookbin.png" class="img-fluid mb-3 h-25 w-75 d-block" />
                 <p>
                   Lastly, there are apps that provide for workflows by providing
                   URL endpoints that, when pinged, trigger a user-defined
@@ -223,16 +223,16 @@
                   category.
                 </p>
                 <i>Pipedream</i>
-                <img src="./images/pipedream.png" class="img-fluid mb-3" />
+                <img src="./images/pipedream.png" class="img-fluid mb-3 w-75 d-block" />
                 <i>Zapier</i>
-                <img src="./images/zapier.png" class="img-fluid mb-3" />
+                <img src="./images/zapier.png" class="img-fluid mb-3 w-75 h-25 d-block" />
 
                 <p>
                   These fully-fledged sites are built to integrate large numbers
                   of predefined apps, which are selected with a click and the
                   granting of permission to access the external app from the
                   workflow site. With this access granted, any number of events
-                  (in addition to webhooks) within the external app can trigger
+                  (not merely webhooks) within the external app can trigger
                   the user-defined workflow. These sites are therefore popular
                   with retail users since the intricacies of API requests are
                   abstracted away. Furthermore, these sites are proprietary,
@@ -242,21 +242,22 @@
                 <h2 class="case-study-h2">1.4 BridgeAPI Niche</h2>
                 <p>
                   Within this mapping of the landscape of online API tools, a
-                  gap seems to exist between the pure developer tools and the
-                  retail workflow tools. We view BridgeAPI as an attempt to fill
-                  the gap by being an open source developer tool to establish
-                  workflows. It maintains the simplicity of the sending and the
+                  gap emerges between the pure developer tools and the
+                  retail workflow tools. We view BridgeAPI as an attempt to occupy
+                  this space as an open source developer tool to establish
+                  workflows. It maintains the simplicity of the purely sending or
                   receiving API developer tools, while combining the
                   functionality of both. Similarly to the developer tools,
-                  BridgeAPI requests no permissions but trusts the user to
-                  configure the endpoint, headers and body of an API request.
-                  Yet as a functioning workflow tool, BridgeAPI can act as a
-                  switchboard to monitor all API-driven one-step workflows
-                  between two apps. It is this ambition which framed our UI as
-                  we wanted to create an intuitive and simple tool, in
+                  BridgeAPI requests no permissions but entrusts the user with
+                  configuring the endpoint, headers and body of an API request.
+                  As a functioning workflow tool, BridgeAPI can act as a
+                  switchboard to monitor all API-driven single-step workflows
+                  between two apps. It is this ambition which framed our user interface as
+                  we sought to create an intuitive and simple tool, in
                   accordance with the KISS principle, that nonetheless contains
                   the features necessary to fulfill a developer’s workflow
                   needs.
+                  [Visual idea: Table showing features of the different tools]
                 </p>
               </section>
               <!-- End of 1. INTRODUCTION -->
@@ -264,13 +265,13 @@
               <!-- 2. USER EXPERIENCE -->
               <section id="user-experience">
                 <h1 class="case-study-h1">2. User Experience</h1>
-                <h2 class="case-study-h2">2.1 Headers and settings</h2>
+                <h2 class="case-study-h2">2.1 Headers and Settings</h2>
                 <p>
-                  The most critical part of the app is the configuration of the
-                  workflow, which we refer to as a <i>bridge</i>. The ideal we strived
-                  towards was that of a self-explanatory interface, where the
-                  headings of each form and field would suffice in guiding the
-                  user through the setup.
+                  The most demanding part aspect of the app from the user's perspective 
+                  is the configuration of the workflow, which we refer to as a <i>bridge</i>. 
+                  The ideal we strived towards was that of a self-explanatory interface, 
+                  where the headings of each form and field sufficiently guides the user 
+                  through the setup.
                 </p>
 
                 <img
@@ -279,8 +280,8 @@
                 />
 
                 <p>
-                  In addition to providing a bridgeAPI endpoint, the Outbound
-                  (forward) URL endpoint and Method dropdown constitute the
+                  In addition to providing a bridgeAPI endpoint, the outbound
+                  (forwarding) URL endpoint and method dropdown fields constitute the
                   minimum viable settings for the workflow to function. While
                   any HTTP request can be selected, we set the default to POST
                   as we envision forwarding data in a request body as the most
@@ -288,7 +289,7 @@
                 </p>
 
                 <p>
-                  While the user can set any number of headers, BridgeAPI is
+                  The user can set any number of headers, but BridgeAPI is
                   opinionated regarding the content type which is hard coded to
                   application/json. The following chart from <i>ProgrammableWeb</i>
                   between March 2018 and March 2020 shows the preponderance of
@@ -296,35 +297,35 @@
                   requests, each accounting for more than ten times the number
                   of APIs accepting XML as the data format. We therefore chose
                   not to add XML support for the first iteration of BridgeAPI
-                  given the added complexity required for what would be limited
+                  given the added complexity required for what would likely be limited
                   use cases.
                 </p>
 
-                <img src="./images/api_stat.png" class="img-fluid mb-3" />
+                <img src="./images/api_stat.png" class="mb-3 w-50 mx-auto d-block" />
 
                 <p>
                   Delays and retries are the two optional ‘extras’ in the bridge
                   configuration. A bridge allows for 0, 1, 3, and 5 retries,
-                  which are triggered in case of unsuccessful response to an
+                  where a retry is triggered in case the of an unsuccessful response to an
                   outbound request. We define an unsuccessful request as any
-                  request that is either incomplete or that completed but with a
+                  request that is either incomplete due to an error or that completed but with a
                   response code equal to or greater than 300. While redirect
                   responses (300s) could be defined as successful, we chose to
-                  define them as unsuccessful and thus trigger a retry to
-                  account for temporary redirects, whereby a later attempt could
-                  conceivably generate a response code in the 200s. The reason
-                  we included this feature was to let the user set the
-                  importance of successfully completing the outbound request, so
-                  that 5 retries could be set for consequential bridges or in
-                  cases where the receiving API is less reliable. [Visual idea:
-                  code snippet for retries functionality].
+                  define them as unsuccessful to account for temporary redirects, 
+                  whereby a retry could conceivably generate a response code in 
+                  the 200s. The reason we included the retry feature was to let the 
+                  user set the importance of successfully completing the 
+                  outbound request, so that 5 retries could be set for 
+                  consequential bridges or in cases where the receiving API is 
+                  less reliable. 
+                  [Visual idea: code snippet for retries functionality].
                 </p>
 
                 <p>
                   In addition, users can decide between an instant forwarding of
                   the request or a delay of 15 minutes, 30 minutes, 1 hour, or 1
                   day. For certain workflows, we decided it would be logical to
-                  insert a delay between links in a workflow chain. For example
+                  insert a delay between links in a workflow chain. For example,
                   if a user wanted to snooze all forwarding requests of a bridge
                   for a day, the 1 day delay option would ensure that all
                   incoming requests are received and held until the following
@@ -335,13 +336,14 @@
                 </p>
 
                 <p>
-                  When the delay and retry options are combined, the delay
+                  When the delay and retry options are combined, the delay period
                   between an unsuccessful request and subsequent retries will
-                  grow exponentially as per the default logic in the Background
-                  Job gem used (Sidekiq). We accept this default logic because
-                  the user’s main concern will be the guaranteed delay between
-                  the incoming webhook and the <i>first</i> forward request attempt,
-                  while the delay between retries is of lesser importance.
+                  grow exponentially with each retry as per the default logic in 
+                  the background job library applied (Sidekiq). 
+                  We accept this default logic because the user’s main concern 
+                  will be the guaranteed delay between the incoming webhook and 
+                  the <i>first</i> forward request attempt, while the delay 
+                  between retries is of lesser importance.
                   [Visual idea - Sidekiq algorithm for retry intervals].
                 </p>
                 <p>
@@ -361,52 +363,55 @@
                   they are applied, we can better adhere to our simple design
                   philosophy and goal of user friendliness by alleviating the
                   need to navigate to a configuration page to set or recollect
-                  them. Finally, since they’re only expected to be set once per
-                  bridge, we consider the inconvenience of duplicating
-                  environmental variables across bridges with the same forward
-                  endpoint to be insignificant.
+                  them. While it could be slightly inconvenient to duplicate 
+                  environmental variables for different bridges, we accept this 
+                  tradeoff as they're only expected to be set infrequently, 
+                  typically only once when defining a bridge. 
                 </p>
                 <p>
                   To best protect the data, the values of an environmental
-                  variable will be encrypted and filtered upon any save action
+                  variable will be encrypted and filtered for the UI upon any save action
                   and cannot be viewed thereafter, leaving users with the option
-                  of either referencing, deleting or editing it. For reasons of
+                  of either referencing, deleting or reassigning them. For reasons of
                   brevity and familiarity, we selected “$env” as the name for
                   referencing the environmental variable namespace, which users
                   can do either from the header fields or in the payload. If a
-                  JWT-secret key was stored as an environmental variable, it
+                  "JWT-secret" key was stored as an environmental variable, it
                   would thus be accessible using the “$env.JWT-secret” syntax.
                 </p>
 
                 <img src="./images/headers.png" class="img-fluid mb-3" />
 
                 <h2 class="case-study-h2">2.2 Payload</h2>
-                <img src="./images/payload.png" class="img-fluid mb-3" />
 
                 <p>
                   GET requests will be useful in cases where users are more
-                  interested in assessing responses than in forwarding data. Yet
+                  interested in assessing responses than in forwarding data, yet
                   the majority of bridges are expected to be POST requests and
                   thus require a defined payload in the request body. We
                   contemplated two options for this feature, one of which was a
                   two-column table to be filled out with keys in the left and
-                  values on the right. This approach would be complicated by
-                  nested values that would require multiple dropdowns and soon
-                  become unwieldy. We therefore chose a second option of
-                  requiring a raw JSON payload since this delivers a cleaner and
-                  more manageable interface. To aid the user, we set a default
+                  values on the right. This approach, however, would be complicated by
+                  the presence of nested values that would require multiple dropdowns 
+                  and soon become unwieldy. We therefore chose a second option of
+                  requiring a raw JSON payload in a code editor since this delivers 
+                  a cleaner and more manageable interface.</p> 
+
+                  <img src="./images/payload.png" class="img-fluid mb-3" />
+                  
+                  <p>To aid the user, we set a default
                   payload to be edited or tested as is, along with a JSON
                   linter. The “$payload” syntax accesses the inbound request
                   payload, so in the above example “$payload.message” accesses a
                   “message” key at the highest level of the inbound request
                   payload, while “$payload.nested.message” plucks the value
-                  referenced by the “message” key of the “nested” object. The
-                  “$env'' syntax could likewise be applied to reference
+                  referenced by the “message” key of the “nested” object. As in the 
+                  header fields, “$env'' syntax could likewise be applied to reference
                   environmental variables within the payload.
                 </p>
 
                 <h2 class="case-study-h2">
-                  2.3 Actions - Abort, Activate/Deactivate, Delete
+                  2.3 Actions
                 </h2>
                 <p>
                   In order to operate as a switchboard for event-driven
@@ -423,17 +428,16 @@
                   modal one click away. We provide the option of deleting the
                   bridge entirely, toggling the active status (activate and
                   deactivate), or of aborting current ongoing requests in the
-                  jobs queue - this will typically involve user-defined delays
-                  or retries to the forward requests. This feature set is
-                  simple, yet paired with its neighboring save button for
-                  editing, it exhausts all predicted configuration needs of a
-                  defined bridge.
+                  jobs queue - this will typically requests being delayed or retried.
+                  This feature set is simple, yet paired with its neighboring 
+                  save button for editing, it exhausts all essential 
+                  configuration needs of a defined bridge.
                 </p>
                 <p>
                   With this single page, all the necessary fields are thus
                   provided to define a workflow between two apps. The interface
                   is simple, intuitive and focused on the necessary features,
-                  with a couple of add-ons in the way of delays and retries that
+                  with a couple of add-ons (delays and retries) that
                   provide useful options to the user without adding noteworthy
                   complexity.
                 </p>
@@ -450,7 +454,7 @@
                   for building out our React frontend because it leverages the
                   benefits of client-side rendered (CSR) apps, such as
                   responsiveness to user activity and decreased server load, as
-                  well benefits of server-side rendered (SSR) such as as search
+                  well as benefits of server-side rendered (SSR) apps such as as search
                   engine optimization (SEO) and fast initial page loads. Added
                   advantages include ease-of-use, comprehensive documentation
                   and an active community. Applying NextJS, our initial page
@@ -470,21 +474,21 @@
                   react-json-editor and react-json-view or more fully-featured,
                   multi-language-supporting editors such as CodeMirror, Ace and
                   Monaco. We decided to use an editor that offers multi-language
-                  support so that the app could be expanded to other formats in
-                  the future and provide a better IDE experience. We chose
-                  CodeMirror, a text editor written in JavaScript for the
-                  browser because it is battle-tested, contains the features we
-                  sought, yet lighter weight than Ace and Monaco (which power
-                  VSCode and Cloud9 respectively), which makes it a better fit
-                  for our use cases of rendering multiple code editors on a
-                  single page with different purposes. The react-codemirror2
-                  wrapper for React lets us integrate it nicely as a React
-                  component. [Visual idea: CodeMirror implementation code
+                  support to ease future extensions to other languages and to provide 
+                  a better IDE experience. We chose CodeMirror, a text editor written 
+                  in JavaScript for the browser because it is battle-tested, 
+                  contains the features we sought, yet lighter weight than Ace and 
+                  Monaco (that power VSCode and Cloud9 respectively), which 
+                  makes it a better fit for our use cases of rendering multiple 
+                  code editors on a single page with different purposes. The 
+                  react-codemirror2 wrapper for React facilitated a smooth 
+                  integration as a React component. 
+                  [Visual idea: CodeMirror implementation code
                   snippet ]
                 </p>
 
                 <p>
-                  The versatility of CodeMirror furthermore lets us set it as
+                  The versatility of CodeMirror furthermore lets us configure it as
                   read-only for inspecting past events and editable for
                   configuring a bridge, as well as interfacing it with a form
                   component when needed. Note that CodeMirror does not offer
@@ -498,7 +502,7 @@
                 </p>
 
                 <p>
-                  The end result is an intuitive editor with aids that users
+                  The end result is an intuitive editor containing aids that users
                   have come to expect from editors like VSCode, including
                   full-screen mode for expansive payload editing, syntax
                   highlighting, json linting, auto-indent and active line
@@ -517,7 +521,7 @@
                   up the single-threaded server, and for this a background
                   processor was required. While Rails ships with ActiveJob, this
                   built-in processor is ill-suited for production since it
-                  enqueues jobs in RAM, leaving them liable to be deleted if the
+                  enqueues jobs in RAM, causing jobs to be cleared if the
                   process is interrupted or if the server is reset.
                 </p>
 
@@ -525,12 +529,12 @@
                   As a third-party library, Sidekiq is proven to integrate well
                   with Rails and is marketed as a “Simple, efficient background
                   processing for Ruby”. It runs concurrently and uses threads to
-                  handle simultaneously in the same process. A key reason for
+                  handle simultaneously jobs in the same process. A key reason for
                   choosing Sidekiq was performance, estimated to be up to twenty
                   times faster than alternative background processors. Secondly,
                   Sidekiq ships with a monitoring dashboard that lets us view
                   jobs in its queue, ongoing jobs and other information useful
-                  to debugging, a feature that allowed us to develop our
+                  to debugging - a feature that allowed us to develop our
                   business logic quicker than if we were without the dashboard
                   or had to implement one ourselves. The final reason for using
                   Sidekiq is its focus on distributed systems. A single redis
@@ -565,10 +569,10 @@
                   execute and tax the database needlessly. A better solution was
                   to make use of PostgreSQL’s jsonb data type that stores JSON
                   data. Hstore, which stores data as key-value pairs, would also
-                  have been useful if we were manipulating the data after saving
+                  have been useful data is manipulated after saving
                   to the database since this would not require deserialization,
                   yet it would require serialization before sending it which
-                  increases memory usage and costs. But as events in our
+                  increases memory usage and costs. Because events in our
                   implementation are never edited and it’s individual parts
                   never queried, we opted to pool all event data into a single
                   JSON data structure to always be pulled from the database and
@@ -577,18 +581,17 @@
                 </p>
 
                 <p>
-                  The above metric shows metric scores for the event page
+                  The above metric [TODO: import metrics image] shows metric scores for the event page
                   loading in production. First Contentful Paint (FCP) marks the
                   time when the first text or images is visible to the user,
                   while Time to Interactive (TTI) is the time taken for the page
                   to become fully interactive. According to a statistics from
                   the HTTP Archive, “sites performing in the ninety-ninth
                   percentile render FCP in about 1.5 seconds...TTI in about 2.2
-                  seconds”<sub>[4][5]</sub>, which means that our FCP load
+                  seconds”<sup>[4][5]</sup>, which means that our FCP load
                   of 600 ms and TTI of 1.2 seconds are both faster than 99
                   percent of websites. This performance can greatly be
-                  attributed to the decision of using jsonb and entails a
-                  pleasant user experience.
+                  attributed to the decision of using jsonb.
                 </p>
 
                 <h2 class="case-study-h2">4.3 Parsing</h2>
@@ -606,17 +609,17 @@
                 <p>
                   To parse headers, we inspect for the presence of the “$env”
                   indicating environment variables.
-                  <img src="./images/parse_value.png" class="img-fluid mb-3" />
+                  <img src="./images/parse_value.png" class="mx-auto d-block w-50 h-25" />
                 </p>
 
                 <p>
                   The fetch_environment_variable method then ensures that
-                  there’s a key to “$env” and fetches it from the database and
+                  “$env” references an actual key and fetches it from the database and
                   decrypts it. To encrypt and decrypt environment variables, we
                   apply Rails’ built-in ActiveSupport::MessageEncryptor.
                   <img
                     src="./images/fetch_env_variable.png"
-                    class="img-fluid mb-3"
+                    class="mx-auto d-block w-75 h-25"
                   />
                 </p>
 
@@ -625,18 +628,18 @@
                   represented by the user_data parameter.
                   <img
                     src="./images/parse_payload.png"
-                    class="img-fluid mb-3"
+                    class="mx-auto d-block w-75 h-25"
                   />
                 </p>
 
                 <p>
-                  If the value includes an “$env” we pass it to the same method
+                  If the value includes a “$env” string we pass it to the same method
                   as with the parsing of headers. If it’s a hash, we recursively
                   call the parse_payload! function again, if it’s an array we
                   iterate and pass each value to the parse_payload! function
                   <img
                     src="./images/parse_value_2.png"
-                    class="img-fluid mb-3"
+                    class="mx-auto d-block w-50 h-25"
                   />
                   while if it includes “$payload” then we call a
                   fetch_payload_data method that returns the referenced inbound
@@ -644,7 +647,7 @@
                   iterate in order to return the value of the innermost key.
                   <img
                     src="./images/fetch_payload_data.png"
-                    class="img-fluid mb-3"
+                    class="mx-auto d-block w-75 h-25"
                   />
                 </p>
               </section>
@@ -668,7 +671,7 @@
                   could help the app remain performant (through lower latency)
                   to all users if user activity is more globally dispersed. As
                   BridgeAPI is currently maintained by three developers without
-                  corporate backing, we also wanted the app scale to happen in a
+                  corporate backing, we also require the app to scale in a
                   cost-efficient manner.
                 </p>
                 <h2 class="case-study-h2">5.2 AWS Elastic Beanstalk</h2>
@@ -686,8 +689,8 @@
                 <h2 class="case-study-h2">5.3 Redis server</h2>
                 <p>
                   While we tried to apply a serverless solution to the greatest
-                  extent possible for cost reasons, due to our reliance on
-                  Sidekiq as a background job processor we need a running Redis
+                  extent possible for cost reasons, our reliance on
+                  Sidekiq as a background job processor necessitates a running Redis
                   server in our AWS setup. AWS does offer a severless key-value
                   cache, DynamoDB, which is similar to Redis but unfortunately
                   Sidekiq does not support it. As a result, 60 percent of our
@@ -709,21 +712,21 @@
                 </p>
                 <h2 class="case-study-h2">5.5 AWS Lambda</h2>
                 <p>
-                  Finally, we’re able to leverage a serverless service in the
-                  form of AWS Lambda for the NextJS app (frontend), whereby
+                  Finally, we are able to leverage a serverless service in the
+                  form of AWS Lambda for the NextJS frontend, whereby
                   we’re freed from needing to manage servers as AWS Lambda
                   provisions these and tears them down as needed. Our server
                   assets (images, stylesheets and scripts) are stored in an S3
-                  bucket integrated with AWS Cloudfront (CDN) ensuring that our
-                  assets can be cached and available locally from the edge
+                  bucket integrated with AWS Cloudfront CDN, ensuring that our
+                  assets can be cached and made available locally from the edge
                   location nearest the user.
                 </p>
                 <h2 class="case-study-h2">5.6 Results</h2>
                 <p>
                   The end result has been universally fast loads. Our total cost
                   is estimated to be 20 dollars per month of which Redis
-                  accounts for 12 dollars. And we’re well equipped to handle an
-                  increase in load as the API server can be replicated to any
+                  accounts for 12 dollars. We’re also well equipped to handle an
+                  increase in load from anywhere as the API server can be replicated to any
                   region within minutes.
                 </p>
               </section>
@@ -747,11 +750,11 @@
                   complexity to the app and cause it to depart from the niche
                   position it currently occupies between the single-direction
                   tools and multi-step workflow tools, but it could be justified
-                  if upon user demand. In its current iteration, a workaround is
+                  by user demand. In its current iteration, a workaround is
                   to define multiple bridges as endpoints for the same webhook
-                  that thus triggers multiple actions with the same request - a
+                  that could thereby trigger multiple actions with the same request - a
                   feasible solution as long as each request is independent of
-                  the outcome of other requests. [ VIsual idea: workaround in
+                  the outcome of other requests. [ Visual idea: workaround in
                   action vs sequential workflow ]
                 </p>
               </section>
