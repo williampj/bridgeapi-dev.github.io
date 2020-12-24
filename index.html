@@ -163,20 +163,19 @@
                   diverse business applications, the API space has grown
                   exponentially since especially the mid 2000s. ProgrammableWeb,
                   a directory that lists public web-based APIs, documents a
-                  growth of 2000 APIs yearly to more than 23,000 by 2019
-                  (https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17).
+                  growth of 2000 APIs yearly to more than 23,000 by 2019.<sup
+                    >[1]</sup
+                  >
                   Postman, the most used developer API tool, registered a
                   ten-fold rise in API request folders, from 3.1 to 34.9 million
-                  between 2017 and 2020
-                  (https://blog.postman.com/api-growth-rate/). The integral role
-                  API requests plays in the budding API economy demands tools
-                  for developers to send, receive, monitor and chain API
-                  requests.
+                  between 2017 and 2020.<sup>[2]</sup> The integral role API
+                  requests plays in the budding API economy demands tools for
+                  developers to send, receive, monitor and chain API requests.
                 </p>
 
                 <h2 class="case-study-h2">1.3 Current Tools</h2>
                 <p>
-                  Among developer tools used to send API requests, Postman is by
+                  Among developer tools used to <i>send</i> API requests, Postman is by
                   far the most utilized.
                 </p>
 
@@ -197,16 +196,16 @@
                   webhooks will therefore require other tools.
                 </p>
 
-                <p>There are also practical tools to receive API requests.</p>
-                <i>Hookbin.com</i>
-                <img src="./images/hookbin.png" class="img-fluid mb-3" />
-
+                <p>There are also practical tools to <i>receive</i> API requests.</p>
+                
                 <p>
                   Hookbin.com is one such tool that provides a URL endpoint to
                   receive webhooks which can then be inspected upon reception.
                   Users can configure an automatic response that can be hard
                   coded or include data from the incoming request.
                 </p>
+                <i>Hookbin.com</i>
+                <img src="./images/hookbin.png" class="img-fluid mb-3" />
                 <p>
                   Lastly, there are apps that provide for workflows by providing
                   URL endpoints that, when pinged, trigger a user-defined
@@ -258,7 +257,7 @@
                 <h2 class="case-study-h2">2.1 Headers and settings</h2>
                 <p>
                   The most critical part of the app is the configuration of the
-                  workflow, which we refer to as a bridge. The ideal we strived
+                  workflow, which we refer to as a <i>bridge</i>. The ideal we strived
                   towards was that of a self-explanatory interface, where the
                   headings of each form and field would suffice in guiding the
                   user through the setup.
@@ -281,7 +280,7 @@
                 <p>
                   While the user can set any number of headers, BridgeAPI is
                   opinionated regarding the content type which is hard coded to
-                  application/json. The following chart from ProgrammableWeb
+                  application/json. The following chart from <i>ProgrammableWeb</i>
                   between March 2018 and March 2020 shows the preponderance of
                   JSON and query strings as the standard data formats for API
                   requests, each accounting for more than ten times the number
@@ -331,7 +330,7 @@
                   grow exponentially as per the default logic in the Background
                   Job gem used (Sidekiq). We accept this default logic because
                   the user’s main concern will be the guaranteed delay between
-                  the incoming webhook and the first forward request attempt,
+                  the incoming webhook and the <i>first</i> forward request attempt,
                   while the delay between retries is of lesser importance.
                   [Visual idea - Sidekiq algorithm for retry intervals].
                 </p>
@@ -575,8 +574,7 @@
                   to become fully interactive. According to a statistics from
                   the HTTP Archive, “sites performing in the ninety-ninth
                   percentile render FCP in about 1.5 seconds...TTI in about 2.2
-                  seconds” (https://web.dev/first-contentful-paint/)
-                  (https://web.dev/interactive/), which means that our FCP load
+                  seconds”<sub>[4][5]</sub>, which means that our FCP load
                   of 600 ms and TTI of 1.2 seconds are both faster than 99
                   percent of websites. This performance can greatly be
                   attributed to the decision of using jsonb and entails a
@@ -673,8 +671,7 @@
                   team such as ours to manage it. In addition, it has
                   transparent and linear pricing rather than exponential price
                   jumps for common features as reported for other PaaS such as
-                  Heroku
-                  (https://codeburst.io/heroku-v-s-aws-elastic-beanstalk-1cc6f12ca3c7).
+                  Heroku.<sup>[6]</sup>
                 </p>
                 <h2 class="case-study-h2">5.3 Redis server</h2>
                 <p>
@@ -763,6 +760,76 @@
         </div>
       </section>
       <!-- End of Section Team -->
+
+      <!-- Section References -->
+      <section class="text-center text-white">
+        <div style="background-color: green">
+          <h1 class="mb-0">References</h1>
+          <h2 class="case-study-h2">Existing solutions</h2>
+          <ul>
+            <li>
+              <a href="zapier.com">Zapier</a>
+            </li>
+            <li>
+              <a href="pipedream.com">Pipedream</a>
+            </li>
+            <li>
+              <a href="postman.com">Postman</a>
+            </li>
+            <li>
+              <a href="hookbin.com">Hookbin</a>
+            </li>
+          </ul>
+          <h2 class="case-study-h2">Libraries</h2>
+          <ul>
+            <li>
+              <a href="https://codemirror.net/">CodeMirror</a>
+            </li>
+            <li>
+              <a href="https://sidekiq.org/">SideKiq</a>
+            </li>
+          </ul>
+          <h2 class="case-study-h2">Other sources</h2>
+          <ul>
+            <li>
+              <a href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17">
+                APIs show Faster Growth Rate in 2019 than Previous Years<sup>[1]</sup>
+              </a>
+            </li>
+          </li>
+          <li>
+            <a href="https://blog.postman.com/api-growth-rate/"
+              >API Growth Continues to Skyrocket in 2020<sup>[2]</sup>
+            </a>
+          </li>
+            <li>
+              <a
+                href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17"
+                >JSON is Clearly the King of API Data Formats in 2020<sup
+                  >[3]</sup
+                ></a
+              >
+            <li>
+              <a href="https://web.dev/first-contentful-paint/">
+                Web.dev - First Contentful Paint<sup>[4]</sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://web.dev/interactive/">
+                Web.dev - Time to Interactive<sup>[5]</sup>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://codeburst.io/heroku-v-s-aws-elastic-beanstalk-1cc6f12ca3c7"
+              >
+                Heroku v.s. AWS Elastic Beanstalk<sup>[6]</sup>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- End of Section References -->
 
       <footer class="mt-auto text-white-50">
         <p class="mb-0" style="background-color: black">
