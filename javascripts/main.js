@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {});
 function handleCaseStudyNav() {
   const caseStudyNav = document.getElementById('case-study-nav');
   const caseStudyNavVisible = () => 700 <= window.pageYOffset;
