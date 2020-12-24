@@ -198,7 +198,7 @@
                 </p>
 
                 <p>There are also practical tools to receive API requests.</p>
-
+                <i>Hookbin.com</i>
                 <img src="./images/hookbin.png" class="img-fluid mb-3" />
 
                 <p>
@@ -264,7 +264,10 @@
                   user through the setup.
                 </p>
 
-                <img src="./images/url_and_features.png" />
+                <img
+                  src="./images/url_and_features.png"
+                  class="img-fluid mb-3"
+                />
 
                 <p>
                   In addition to providing a bridgeAPI endpoint, the Outbound
@@ -288,7 +291,7 @@
                   use cases.
                 </p>
 
-                <img src="./images/api_stat.png" />
+                <img src="./images/api_stat.png" class="img-fluid mb-3" />
 
                 <p>
                   Delays and retries are the two optional ‘extras’ in the bridge
@@ -338,7 +341,7 @@
                   environmental variables.
                 </p>
 
-                <img src="./images/env_variables.png" />
+                <img src="./images/env_variables.png" class="img-fluid mb-3" />
 
                 <p>
                   Environmental variables are scoped to the bridge rather than
@@ -366,10 +369,10 @@
                   would thus be accessible using the “$env.JWT-secret” syntax.
                 </p>
 
-                <img src="./images/headers.png" />
+                <img src="./images/headers.png" class="img-fluid mb-3" />
 
                 <h2 class="case-study-h2">2.2 Payload</h2>
-                <img src="./images/payload.png" />
+                <img src="./images/payload.png" class="img-fluid mb-3" />
 
                 <p>
                   GET requests will be useful in cases where users are more
@@ -404,7 +407,7 @@
                   requests to its endpoint.
                 </p>
 
-                <img src="./images/actions.png" />
+                <img src="./images/actions.png" class="img-fluid mb-3" />
 
                 <p>
                   Actions to the bridge are all collected within an “Actions”
@@ -595,7 +598,7 @@
                 <p>
                   To parse headers, we inspect for the presence of the “$env”
                   indicating environment variables.
-                  <img src="./images/parse_value.png" />
+                  <img src="./images/parse_value.png" class="img-fluid mb-3" />
                 </p>
 
                 <p>
@@ -603,13 +606,19 @@
                   there’s a key to “$env” and fetches it from the database and
                   decrypts it. To encrypt and decrypt environment variables, we
                   apply Rails’ built-in ActiveSupport::MessageEncryptor.
-                  <img src="./images/fetch_env_variable.png" />
+                  <img
+                    src="./images/fetch_env_variable.png"
+                    class="img-fluid mb-3"
+                  />
                 </p>
 
                 <p>
                   For the payload, we iterate through the raw JSON as
                   represented by the user_data parameter.
-                  <img src="./images/parse_payload.png" />
+                  <img
+                    src="./images/parse_payload.png"
+                    class="img-fluid mb-3"
+                  />
                 </p>
 
                 <p>
@@ -617,12 +626,18 @@
                   as with the parsing of headers. If it’s a hash, we recursively
                   call the parse_payload! function again, if it’s an array we
                   iterate and pass each value to the parse_payload! function
-                  <img src="./images/parse_value_2.png" />
+                  <img
+                    src="./images/parse_value_2.png"
+                    class="img-fluid mb-3"
+                  />
                   while if it includes “$payload” then we call a
                   fetch_payload_data method that returns the referenced inbound
                   value. To account for possible nested payload values, we
                   iterate in order to return the value of the innermost key.
-                  <img src="./images/fetch_payload_data.png" />
+                  <img
+                    src="./images/fetch_payload_data.png"
+                    class="img-fluid mb-3"
+                  />
                 </p>
               </section>
               <!-- End of 4. SYSTEM ARCHITECTURE -->
