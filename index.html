@@ -43,7 +43,7 @@
       rel="stylesheet"
     />
 
-    <!-- <style>reset</style> -->
+    <!-- <style></style> -->
 
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" href="stylesheets/main.css" />
@@ -79,7 +79,7 @@
 
       <!-- Section something -->
       <section class="text-center text-white">
-        <div style="background-color: red">
+        <div style="background-color: #184d47">
           <h1 class="mb-0">Hello World</h1>
         </div>
       </section>
@@ -87,7 +87,7 @@
 
       <!-- Section something -->
       <section class="text-center text-white">
-        <div style="background-color: green">
+        <div style="background-color: grey">
           <h1 class="mb-0">Hello World</h1>
         </div>
       </section>
@@ -95,7 +95,7 @@
 
       <!-- Section something -->
       <section class="text-center text-white">
-        <div style="background-color: blue">
+        <div style="background-color: #96bb7c">
           <h1 class="mb-0">Hello World</h1>
         </div>
       </section>
@@ -129,8 +129,16 @@
                       SYSTEM ARCHITECTURE
                     </a>
                   </li>
-                  <li>5</li>
-                  <li>6</li>
+                  <li>
+                    <a href="#cloud-hosting" class="case-study-anchor">
+                      CLOUD HOSTING
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#future-work" class="case-study-anchor">
+                      FUTURE WORK
+                    </a>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -191,10 +199,10 @@
 
                 <p>There are also practical tools to receive API requests.</p>
 
-                <!-- <img src="./images/request-bin.png" class="img-fluid mb-3" /> -->
+                <img src="./images/hookbin.png" class="img-fluid mb-3" />
 
                 <p>
-                  Webhook.site is one such tool that provides a URL endpoint to
+                  Hookbin.com is one such tool that provides a URL endpoint to
                   receive webhooks which can then be inspected upon reception.
                   Users can configure an automatic response that can be hard
                   coded or include data from the incoming request.
@@ -294,8 +302,8 @@
                   we included this feature was to let the user set the
                   importance of successfully completing the outbound request, so
                   that 5 retries could be set for consequential bridges or in
-                  cases where the receiving API is less reliable. (Visual idea:
-                  code snippet for retries functionality).
+                  cases where the receiving API is less reliable. [Visual idea:
+                  code snippet for retries functionality].
                 </p>
                 <p>
                   In addition, users can decide between an instant forwarding of
@@ -307,8 +315,8 @@
                   incoming requests are received and held until the following
                   day. Another advantage is that it gives the user time to abort
                   or deactivate the bridge if circumstances during the delay
-                  period call for it. (Visual idea: code snippet - Sidekiq delay
-                  call).
+                  period call for it. [Visual idea: code snippet - Sidekiq delay
+                  call].
                 </p>
                 <p>
                   When the delay and retry options are combined, the delay
@@ -318,7 +326,7 @@
                   the user’s main concern will be the guaranteed delay between
                   the incoming webhook and the first forward request attempt,
                   while the delay between retries is of lesser importance.
-                  (Visual idea - Sidekiq algorithm for retry intervals).
+                  [Visual idea - Sidekiq algorithm for retry intervals].
                 </p>
                 <p>
                   In order to include sensitive information in the body or
@@ -487,8 +495,241 @@
               <!-- 4. SYSTEM ARCHITECTURE -->
               <section id="system-architecture">
                 <h1 class="case-study-h1">4. System Architecture</h1>
-                <h2 class="case-study-h2">4.1 API Server</h2>
+                <h2 class="case-study-h2">4.1 Background process</h2>
+                <p>
+                  We needed a way to process events concurrently without holding
+                  up the single-threaded server, and for this a background
+                  processor was required. While Rails ships with ActiveJob, this
+                  built-in processor is ill-suited for production since it
+                  enqueues jobs in RAM, leaving them liable to be deleted if the
+                  process is interrupted or if the server is reset.
+                </p>
+
+                <p>
+                  As a third-party library, Sidekiq is proven to integrate well
+                  with Rails and is marketed as a “Simple, efficient background
+                  processing for Ruby”. It runs concurrently and uses threads to
+                  handle simultaneously in the same process. A key reason for
+                  choosing Sidekiq was performance, estimated to be up to twenty
+                  times faster than alternative background processors. Secondly,
+                  Sidekiq ships with a monitoring dashboard that lets us view
+                  jobs in its queue, ongoing jobs and other information useful
+                  to debugging, a feature that allowed us to develop our
+                  business logic quicker than if we were without the dashboard
+                  or had to implement one ourselves. The final reason for using
+                  Sidekiq is its focus on distributed systems. A single redis
+                  cache - the cache used by Sidekiq - can issue jobs to numerous
+                  Sidekiq server instances.
+                </p>
+
+                <p>
+                  The result is a job queue system that runs in tandem with our
+                  main Rails API server that can easily scale horizontally and
+                  vertically. [ Visual idea: Rails - Sidekiq - Redis interaction
+                  ]
+                </p>
+
+                <h2 class="case-study-h2">4.2 Database Schema</h2>
+                <p>
+                  For the database, we needed a schema that would let us rapidly
+                  retrieve all data related to workflow events yet without
+                  overloading the database with queries. Our initial database
+                  design envisioned separate tables for most data elements of an
+                  event: [ Visual idea: Initial database design ]
+                </p>
+
+                <p>
+                  An implication of this would have been long join-queries such
+                  as: [ Visual idea: hypothetical sql join statement to gather
+                  data for event page ]
+                </p>
+
+                <p>
+                  Such queries would both be difficult to work with, slow to
+                  execute and tax the database needlessly. A better solution was
+                  to make use of PostgreSQL’s jsonb data type that stores JSON
+                  data. Hstore, which stores data as key-value pairs, would also
+                  have been useful if we were manipulating the data after saving
+                  to the database since this would not require deserialization,
+                  yet it would require serialization before sending it which
+                  increases memory usage and costs. But as events in our
+                  implementation are never edited and it’s individual parts
+                  never queried, we opted to pool all event data into a single
+                  JSON data structure to always be pulled from the database and
+                  sent to the frontend as is. [ Visual idea: FCP (First
+                  Contentful Paint) - page load metrics ]
+                </p>
+
+                <p>
+                  The above metric shows metric scores for the event page
+                  loading in production. First Contentful Paint (FCP) marks the
+                  time when the first text or images is visible to the user,
+                  while Time to Interactive (TTI) is the time taken for the page
+                  to become fully interactive. According to a statistics from
+                  the HTTP Archive, “sites performing in the ninety-ninth
+                  percentile render FCP in about 1.5 seconds...TTI in about 2.2
+                  seconds” (https://web.dev/first-contentful-paint/)
+                  (https://web.dev/interactive/), which means that our FCP load
+                  of 600 ms and TTI of 1.2 seconds are both faster than 99
+                  percent of websites. This performance can greatly be
+                  attributed to the decision of using jsonb and entails a
+                  pleasant user experience.
+                </p>
+
+                <h2 class="case-study-h2">4.3 Parsing</h2>
+                <p>
+                  To implement the app there were numerous coding challenges
+                  related to directing the workflow of a triggered bridge, not
+                  least of which was the parsing of outbound headers (to
+                  substitute environment variables) and outbound payload (to
+                  substitute inbound payload variables and environment
+                  variables). In addition, some values must be encrypted - to
+                  prevent them from being saved in clear text - and filtered for
+                  the user interface.
+                </p>
+
+                <p>
+                  To parse headers, we inspect for the presence of the “$env”
+                  indicating environment variables.
+                  <img src="./images/parse_value.png" />
+                </p>
+
+                <p>
+                  The fetch_environment_variable method then ensures that
+                  there’s a key to “$env” and fetches it from the database and
+                  decrypts it. To encrypt and decrypt environment variables, we
+                  apply Rails’ built-in ActiveSupport::MessageEncryptor.
+                  <img src="./images/fetch_env_variable.png" />
+                </p>
+
+                <p>
+                  For the payload, we iterate through the raw JSON as
+                  represented by the user_data parameter.
+                  <img src="./images/parse_payload.png" />
+                </p>
+
+                <p>
+                  If the value includes an “$env” we pass it to the same method
+                  as with the parsing of headers. If it’s a hash, we recursively
+                  call the parse_payload! function again, if it’s an array we
+                  iterate and pass each value to the parse_payload! function
+                  <img src="./images/parse_value_2.png" />
+                  while if it includes “$payload” then we call a
+                  fetch_payload_data method that returns the referenced inbound
+                  value. To account for possible nested payload values, we
+                  iterate in order to return the value of the innermost key.
+                  <img src="./images/fetch_payload_data.png" />
+                </p>
               </section>
+              <!-- End of 4. SYSTEM ARCHITECTURE -->
+
+              <!-- 5. CLOUD HOSTING -->
+              <section id="system-architecture">
+                <h1 class="case-study-h1">5. Cloud Hosting</h1>
+                <p>
+                  [Visual ideas: overall AWS architecture plus detailed diagrams
+                  of each part]
+                </p>
+                <h2 class="case-study-h2">5.1 Scaling and costs</h2>
+                <p>
+                  A challenge in production was to find a hosting solution that
+                  eases future vertical and horizontal scaling while maintaining
+                  strict cost control. Scaling vertically, such as adding cpu or
+                  memory, would be beneficial if the user-base growth is
+                  concentrated in a specific region, while horizontal scaling
+                  through added server instances in other regional data centers
+                  could help the app remain performant (through lower latency)
+                  to all users if user activity is more globally dispersed. As
+                  BridgeAPI is currently maintained by three developers without
+                  corporate backing, we also wanted the app scale to happen in a
+                  cost-efficient manner.
+                </p>
+                <h2 class="case-study-h2">5.2 AWS Elastic Beanstalk</h2>
+                <p>
+                  We chose a Platform as a Service (PaaS) in the form of AWS
+                  Elastic Beanstalk (EB) to host the API server. With EB it’s
+                  possible to scale both vertically and horizontally with only a
+                  few clicks, while monitoring, reporting, health check and load
+                  balancer for distributed systems make it easier for a small
+                  team such as ours to manage it. In addition, it has
+                  transparent and linear pricing rather than exponential price
+                  jumps for common features as reported for other PaaS such as
+                  Heroku
+                  (https://codeburst.io/heroku-v-s-aws-elastic-beanstalk-1cc6f12ca3c7).
+                </p>
+                <h2 class="case-study-h2">5.3 Redis server</h2>
+                <p>
+                  While we tried to apply a serverless solution to the greatest
+                  extent possible for cost reasons, due to our reliance on
+                  Sidekiq as a background job processor we need a running Redis
+                  server in our AWS setup. AWS does offer a severless key-value
+                  cache, DynamoDB, which is similar to Redis but unfortunately
+                  Sidekiq does not support it. As a result, 60 percent of our
+                  costs are estimated to be related to the Redis server since
+                  AWS does not offer a serverless Redis cache, but we chose to
+                  accept this steep proportion given the relatively modest total
+                  expenses. Nonetheless, future cost cutting would likely entail
+                  researching replacements for Sidekiq and Redis.
+                </p>
+                <h2 class="case-study-h2">5.4 AWS Aurora</h2>
+                <p>
+                  AWS is more accommodating with regards to the database. While
+                  we used PostgreSQL in development and had planned to use it in
+                  production, we chose AWS Aurora instead as it’s a
+                  PostgreSQL-compatible database that supports serverless
+                  architectures, allowing us to follow a pay-per-use pricing
+                  model. Moreover, using the AWS-native database lets us rely on
+                  AWS to handle database scaling and monitoring for us.
+                </p>
+                <h2 class="case-study-h2">5.5 AWS Lambda</h2>
+                <p>
+                  Finally, we’re able to leverage a serverless service in the
+                  form of AWS Lambda for the NextJS app (frontend), whereby
+                  we’re freed from needing to manage servers as AWS Lambda
+                  provisions these and tears them down as needed. Our server
+                  assets (images, stylesheets and scripts) are stored in an S3
+                  bucket integrated with AWS Cloudfront (CDN) ensuring that our
+                  assets can be cached and available locally from the edge
+                  location nearest the user.
+                </p>
+                <h2 class="case-study-h2">5.6 Results</h2>
+                <p>
+                  The end result has been universally fast loads. Our total cost
+                  is estimated to be 20 dollars per month of which Redis
+                  accounts for 12 dollars. And we’re well equipped to handle an
+                  increase in load as the API server can be replicated to any
+                  region within minutes.
+                </p>
+              </section>
+              <!-- End of 5. CLOUD HOSTING -->
+
+              <!-- FUTURE WORK -->
+              <section id="future-work">
+                <h1 class="case-study-h1">Future Work</h1>
+                <p>
+                  One avenue of improvement to the user experience is to include
+                  multiple data formats for receiving and forwarding requests.
+                  Right now it’s only JSON-compatible, but XML could be extended
+                  with minimal effort although it would deviate slightly from
+                  the minimalist aesthetic of the bridge page.
+                </p>
+
+                <p>
+                  Another idea, drawing from popular sites such as Zapier and
+                  Pipedream, is to allow multiple-step workflows as opposed to
+                  the current single-step limit. This would add significant
+                  complexity to the app and cause it to depart from the niche
+                  position it currently occupies between the single-direction
+                  tools and multi-step workflow tools, but it could be justified
+                  if upon user demand. In its current iteration, a workaround is
+                  to define multiple bridges as endpoints for the same webhook
+                  that thus triggers multiple actions with the same request - a
+                  feasible solution as long as each request is independent of
+                  the outcome of other requests. [ VIsual idea: workaround in
+                  action vs sequential workflow ]
+                </p>
+              </section>
+              <!-- End of FUTURE WORK -->
             </div>
             <!-- End of CASE STUDY -->
           </div>
