@@ -11,3 +11,7 @@
 .page-main {
   flex-grow: 1;
 }
+
+.mw-100 {
+  max-width: 100%;
+}
