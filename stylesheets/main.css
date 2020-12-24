@@ -16,6 +16,65 @@
   max-width: 100%;
 }
 
+/* 2. CASE STUDY */
+.case-study-h1 {
+  color: #184d47;
+}
+
+.case-study-h2 {
+  color: #96bb7c;
+}
+
+.case-study-anchor {
+  text-decoration: none;
+  color: rgb(168, 160, 149);
+}
+
+nav ul li {
+  list-style: circle;
+}
+
 .top-200 {
   top: 200px;
+}
+
+/* Uncategorized */
+.github-link {
+  position: sticky;
+  float: right;
+  top: 20px;
+  right: 20px;
+}
+
+/* Media Queries */
+/* xs */
+@media (min-device-width: 0) and (max-device-width: 575px) {
+  /* X.2 CASE STUDY */
+  #case-study-nav {
+    display: none;
+  }
+}
+
+/* sm */
+@media (min-width: 576px) and (max-device-width: 767px) {
+  /* X.2 CASE STUDY */
+  #case-study-nav {
+    display: none;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+}
+
+/* lg */
+@media (min-width: 992px) {
+}
+
+/* xlg */
+@media (min-width: 1200px) {
+}
+
+/* xxlg */
+@media (min-width: 1400px) {
 }
