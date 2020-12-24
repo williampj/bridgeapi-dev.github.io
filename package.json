@@ -1,0 +1,26 @@
+{
+  "name": "bridgeapi_case_study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williampj/BridgeAPI-case-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williampj/BridgeAPI-case-study/issues"
+  },
+  "homepage": "https://github.com/williampj/BridgeAPI-case-study#readme",
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "prettier": "^2.2.1"
+  }
+}
