@@ -213,8 +213,9 @@
                   workflow. Zapier, IFTTT and Pipedream are examples within this
                   category.
                 </p>
-
-                <img src="./images/request-bin.png" class="img-fluid mb-3" />
+                <i>Pipedream</i>
+                <img src="./images/pipedream.png" class="img-fluid mb-3" />
+                <i>Zapier</i>
                 <img src="./images/zapier.png" class="img-fluid mb-3" />
 
                 <p>
@@ -263,7 +264,7 @@
                   user through the setup.
                 </p>
 
-                <img />
+                <img src="./images/url_and_features.png" />
 
                 <p>
                   In addition to providing a bridgeAPI endpoint, the Outbound
@@ -273,10 +274,11 @@
                   as we envision forwarding data in a request body as the most
                   frequent function of a bridge.
                 </p>
+
                 <p>
                   While the user can set any number of headers, BridgeAPI is
                   opinionated regarding the content type which is hard coded to
-                  application/json. The following chart from programmableweb
+                  application/json. The following chart from ProgrammableWeb
                   between March 2018 and March 2020 shows the preponderance of
                   JSON and query strings as the standard data formats for API
                   requests, each accounting for more than ten times the number
@@ -286,7 +288,7 @@
                   use cases.
                 </p>
 
-                <img />
+                <img src="./images/api_stat.png" />
 
                 <p>
                   Delays and retries are the two optional ‘extras’ in the bridge
@@ -305,6 +307,7 @@
                   cases where the receiving API is less reliable. [Visual idea:
                   code snippet for retries functionality].
                 </p>
+
                 <p>
                   In addition, users can decide between an instant forwarding of
                   the request or a delay of 15 minutes, 30 minutes, 1 hour, or 1
@@ -318,6 +321,7 @@
                   period call for it. [Visual idea: code snippet - Sidekiq delay
                   call].
                 </p>
+
                 <p>
                   When the delay and retry options are combined, the delay
                   between an unsuccessful request and subsequent retries will
@@ -334,7 +338,7 @@
                   environmental variables.
                 </p>
 
-                <img />
+                <img src="./images/env_variables.png" />
 
                 <p>
                   Environmental variables are scoped to the bridge rather than
@@ -362,10 +366,10 @@
                   would thus be accessible using the “$env.JWT-secret” syntax.
                 </p>
 
-                <img />
+                <img src="./images/headers.png" />
 
                 <h2 class="case-study-h2">2.2 Payload</h2>
-                <img />
+                <img src="./images/payload.png" />
 
                 <p>
                   GET requests will be useful in cases where users are more
@@ -400,7 +404,7 @@
                   requests to its endpoint.
                 </p>
 
-                <img />
+                <img src="./images/actions.png" />
 
                 <p>
                   Actions to the bridge are all collected within an “Actions”
