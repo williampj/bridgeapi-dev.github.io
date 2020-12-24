@@ -1,3 +1,11 @@
+/* 
+    TABLE OF CONTENTS
+    1. General Body
+    2. Case Study
+    X. Media Queries
+*/
+
+/* 1. General Body */
 .wrapper {
   display: flex;
   flex-direction: column;
