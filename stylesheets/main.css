@@ -2,6 +2,7 @@
     TABLE OF CONTENTS
     1. General Body
     2. Case Study
+    3. Team
     X. Media Queries
 */
 
@@ -38,7 +39,7 @@
   color: rgb(168, 160, 149);
 }
 
-.case-study-anchor:hover{
+.case-study-anchor:hover {
   color: #184d47;
 }
 
@@ -46,8 +47,8 @@ nav ul li {
   list-style: circle;
 }
 
-.top-200 {
-  top: 200px;
+.top-25 {
+  top: 25%;
 }
 
 .active {
@@ -59,6 +60,20 @@ nav ul li {
 .active > .case-study-anchor {
   color: #184d47;
   font-weight: 700;
+}
+
+/* Team */
+.avatar {
+  border-radius: 50%;
+}
+
+.person-icon {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.team-message {
+  font-size: 1.3rem;
 }
 
 /* Uncategorized */
@@ -87,7 +102,11 @@ nav ul li {
 }
 
 /* md */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-device-width: 991px) {
+  .person-icon {
+    max-width: 30px;
+    max-height: 30px;
+  }
 }
 
 /* lg */

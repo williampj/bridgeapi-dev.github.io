@@ -1,811 +1,1010 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="title" property="og:title" content="BridgeAPI" />
 
-  <meta name="title" property="og:title" content="BridgeAPI" />
+    <meta
+      name="description"
+      property="og:description"
+      content="BridgeAPI is a serverless integration platform that
+      lets you connect your apps through event-driven workflows"
+    />
 
-  <meta name="description" property="og:description" content="BridgeAPI is a serverless integration platform that
-      lets you connect your apps through event-driven workflows" />
+    <meta name="type" property="og:type" content="website" />
 
-  <meta name="type" property="og:type" content="website" />
+    <meta
+      name="url"
+      property="og:url"
+      content="https://github.com/williampj/bridgeapi.js"
+    />
 
-  <meta name="url" property="og:url" content="https://github.com/williampj/bridgeapi.js" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="author"
+      content="Andrew Crotwell, William Jackson, Angel Ruiz-Bates"
+    />
 
-  <meta name="author" content="Andrew Crotwell, William Jackson, Angel Ruiz-Bates" />
+    <title>BridgeAPI Case Study</title>
 
-  <title>BridgeAPI Case Study</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <!-- <style></style> -->
 
-  <!-- <style></style> -->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/main.css" />
 
-  <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
-  <link rel="stylesheet" href="stylesheets/main.css" />
+    <!-- <script></script> -->
 
-  <!-- <script></script> -->
+    <script src="javascripts/main.js"></script>
+  </head>
 
-  <script src="javascripts/main.js"></script>
-</head>
-
-<body class="d-flex">
-  <div class="h-100">
-    <!-- Cover -->
-    <section class="d-flex w-100 mx-auto flex-column text-center text-white bg-dark">
-      <div class="wrapper">
-        <div id="cover" class="d-flex flex-column justify-content-center page-main">
-          <img src="./images/logos/logo.svg" class="justify-self-center d-flex align-self-center mw-100" />
-          <p class="lead d-flex align-self-center mt-5">
-            BridgeAPI is a serverless integration platform that lets you
-            connect your apps through event-driven workflows.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- End of Cover -->
-
-    <!-- Section something -->
-    <section class="text-center text-white">
-      <div style="background-color: #184d47">
-        <h1 class="mb-0">Hello World</h1>
-      </div>
-    </section>
-    <!-- End of Section something -->
-
-    <!-- Section something -->
-    <section class="text-center text-white">
-      <div style="background-color: grey">
-        <h1 class="mb-0">Hello World</h1>
-      </div>
-    </section>
-    <!-- End of Section something -->
-
-    <!-- Section something -->
-    <section class="text-center text-white">
-      <div style="background-color: #96bb7c">
-        <h1 class="mb-0">Hello World</h1>
-      </div>
-    </section>
-    <!-- End of Section something -->
-
-    <!-- Main Body -->
-    <section id="main">
-      <div class="container mt-4" style="margin-left: 0;margin-right: 0;">
-        <div class="row">
-          <!-- TODO: Mobile size -->
-          <div class="col-md-3">
-            <nav id="case-study-nav" class="sticky-top top-200">
-              <ul>
-                <li>
-                  <a href="#introduction" class="case-study-anchor">
-                    INTRODUCTION
-                  </a>
-                </li>
-                <li>
-                  <a href="#user-experience" class="case-study-anchor">
-                    USER EXPERIENCE
-                  </a>
-                </li>
-                <li>
-                  <a href="#frontend-architecture" class="case-study-anchor">
-                    FRONTEND ARCHITECTURE
-                  </a>
-                </li>
-                <li>
-                  <a href="#system-architecture" class="case-study-anchor">
-                    SYSTEM ARCHITECTURE
-                  </a>
-                </li>
-                <li>
-                  <a href="#cloud-hosting" class="case-study-anchor">
-                    CLOUD HOSTING
-                  </a>
-                </li>
-                <li>
-                  <a href="#future-work" class="case-study-anchor">
-                    FUTURE WORK
-                  </a>
-                </li>
-                <li>
-                  <a href="#team" class="case-study-anchor">
-                    THE TEAM
-                  </a>
-                </li>
-                <li>
-                  <a href="#references" class="case-study-anchor">
-                    REFERENCES
-                  </a>
-                </li>
-              </ul>
-            </nav>
+  <body class="d-flex">
+    <div class="h-100">
+      <!-- Cover -->
+      <section
+        class="d-flex w-100 mx-auto flex-column text-center text-white bg-dark"
+      >
+        <div class="wrapper">
+          <div
+            id="cover"
+            class="d-flex flex-column justify-content-center page-main"
+          >
+            <img
+              src="./images/logos/logo.svg"
+              class="justify-self-center d-flex align-self-center mw-100"
+            />
+            <p class="lead d-flex align-self-center mt-5">
+              BridgeAPI is a serverless integration platform that lets you
+              connect your apps through event-driven workflows.
+            </p>
           </div>
-          <!-- CASE STUDY -->
-          <div id="main-case-study" class="col-md-9 col-sm-12">
-            <h1>Case Study</h1>
-            <!-- 1. INTRODUCTION -->
-            <section id="introduction">
-              <h1 class="case-study-h1">1. Introduction</h1>
-              <h2 class="case-study-h2">1.1 BridgeAPI</h2>
-              <p>
-                BridgeAPI is a free, open source web developer tool that
-                receives, filters and forwards HTTP requests. This combination
-                allows developers to set up event-driven workflows in a few
-                simple steps with BridgeAPI as the bridge between apps.
-              </p>
-
-              <h2 class="case-study-h2">1.2 The API Economy</h2>
-              <p>
-                Propelled by the rise in microservices, cloud computing,
-                Internet of Things, and the general benefits of integrating
-                diverse business applications, the API space has grown
-                exponentially since especially the mid 2000s. ProgrammableWeb,
-                a directory that lists public web-based APIs, documented a
-                growth of 2000 APIs yearly to more than 23,000 by 2019.<sup>[1]</sup>
-                Postman, the most used developer API tool, registered a
-                ten-fold rise in API request folders, from 3.1 to 34.9 million
-                between 2017 and 2020.<sup>[2]</sup> The integral role API
-                requests plays in the budding API economy demands tools for
-                developers to send, receive, monitor, and chain API requests.
-              </p>
-
-              <h2 class="case-study-h2">1.3 Current Tools</h2>
-              <p>
-                Among developer tools used to <i>send</i> API requests, Postman is by
-                far the most utilized.
-              </p>
-              <i>Postman</i>
-              <img src="./images/postman.png" class="img-fluid mb-3 h-75 d-block" />
-
-              <p>
-                It lets users select the request type and endpoint along with
-                a host of optional settings including parameters, headers and
-                body. It also allows for pre-request scripts, whereby a request
-                can be delayed, or more advanced features like regularly
-                scheduled requests. The response is subsequently rendered with
-                corresponding status, time, size and body among other data.
-                Postman is very intuitive to use and practically covers every
-                conceivable aspect of an API request, yet it is limited in so
-                far that any workflow involving Postman must originate with a
-                Postman request - making it more useful as a testing tool for
-                an API interface. Any need to integrate workflows triggered by
-                webhooks will therefore require other tools.
-              </p>
-
-              <p>There are also practical tools to <i>receive</i> API requests.</p>
-
-              <p>
-                Hookbin.com is one such tool that provides a URL endpoint to
-                receive webhooks which can then be inspected upon reception.
-                Users can configure an automatic response that can be hard
-                coded or include data from the incoming request.
-              </p>
-              <i>Hookbin.com</i>
-              <img src="./images/hookbin.png" class="img-fluid mb-3 h-25 w-75 d-block" />
-              <p>
-                Lastly, there are apps that provide for workflows by providing
-                URL endpoints that, when pinged, trigger a user-defined
-                workflow. Zapier, IFTTT and Pipedream are examples within this
-                category.
-              </p>
-              <i>Pipedream</i>
-              <img src="./images/pipedream.png" class="img-fluid mb-3 w-75 d-block" />
-              <i>Zapier</i>
-              <img src="./images/zapier.png" class="img-fluid mb-3 w-75 h-25 d-block" />
-
-              <p>
-                These fully-fledged sites are built to integrate large numbers
-                of predefined apps, which are selected with a click and the
-                granting of permission to access the external app from the
-                workflow site. With this access granted, any number of events
-                (not merely webhooks) within the external app can trigger
-                the user-defined workflow. These sites are therefore popular
-                with retail users since the intricacies of API requests are
-                abstracted away. Furthermore, these sites are proprietary,
-                involving a limited free tier and scaled paid tiers.
-              </p>
-
-              <h2 class="case-study-h2">1.4 BridgeAPI Niche</h2>
-              <p>
-                Within this mapping of the landscape of online API tools, a
-                gap emerges between the pure developer tools and the
-                retail workflow tools. We view BridgeAPI as an attempt to occupy
-                this space as an open source developer tool to establish
-                workflows. It maintains the simplicity of the purely sending or
-                receiving API developer tools, while combining the
-                functionality of both. Similarly to the developer tools,
-                BridgeAPI requests no permissions but entrusts the user with
-                configuring the endpoint, headers and body of an API request.
-                As a functioning workflow tool, BridgeAPI can act as a
-                switchboard to monitor all API-driven single-step workflows
-                between two apps. It is this ambition which framed our user interface as
-                we sought to create an intuitive and simple tool, in
-                accordance with the KISS principle, that nonetheless contains
-                the features necessary to fulfill a developer’s workflow
-                needs.
-                [Visual idea: Table showing features of the different tools]
-              </p>
-            </section>
-            <!-- End of 1. INTRODUCTION -->
-
-            <!-- 2. USER EXPERIENCE -->
-            <section id="user-experience">
-              <h1 class="case-study-h1">2. User Experience</h1>
-              <h2 class="case-study-h2">2.1 Headers and Settings</h2>
-              <p>
-                The most demanding part aspect of the app from the user's perspective
-                is the configuration of the workflow, which we refer to as a <i>bridge</i>.
-                The ideal we strived towards was that of a self-explanatory interface,
-                where the headings of each form and field sufficiently guides the user
-                through the setup.
-              </p>
-
-              <img src="./images/url_and_features.png" class="img-fluid mb-3" />
-
-              <p>
-                In addition to providing a bridgeAPI endpoint, the outbound
-                (forwarding) URL endpoint and method dropdown fields constitute the
-                minimum viable settings for the workflow to function. While
-                any HTTP request can be selected, we set the default to POST
-                as we envision forwarding data in a request body as the most
-                frequent function of a bridge.
-              </p>
-
-              <p>
-                The user can set any number of headers, but BridgeAPI is
-                opinionated regarding the content type which is hard coded to
-                application/json. The following chart from <i>ProgrammableWeb</i>
-                between March 2018 and March 2020 shows the preponderance of
-                JSON and query strings as the standard data formats for API
-                requests, each accounting for more than ten times the number
-                of APIs accepting XML as the data format. We therefore chose
-                not to add XML support for the first iteration of BridgeAPI
-                given the added complexity required for what would likely be limited
-                use cases.
-              </p>
-
-              <img src="./images/api_stat.png" class="mb-3 w-50 mx-auto d-block" />
-
-              <p>
-                Delays and retries are the two optional ‘extras’ in the bridge
-                configuration. A bridge allows for 0, 1, 3, and 5 retries,
-                where a retry is triggered in case the of an unsuccessful response to an
-                outbound request. We define an unsuccessful request as any
-                request that is either incomplete due to an error or that completed but with a
-                response code equal to or greater than 300. While redirect
-                responses (300s) could be defined as successful, we chose to
-                define them as unsuccessful to account for temporary redirects,
-                whereby a retry could conceivably generate a response code in
-                the 200s. The reason we included the retry feature was to let the
-                user set the importance of successfully completing the
-                outbound request, so that 5 retries could be set for
-                consequential bridges or in cases where the receiving API is
-                less reliable.
-                [Visual idea: code snippet for retries functionality].
-              </p>
-
-              <p>
-                In addition, users can decide between an instant forwarding of
-                the request or a delay of 15 minutes, 30 minutes, 1 hour, or 1
-                day. For certain workflows, we decided it would be logical to
-                insert a delay between links in a workflow chain. For example,
-                if a user wanted to snooze all forwarding requests of a bridge
-                for a day, the 1 day delay option would ensure that all
-                incoming requests are received and held until the following
-                day. Another advantage is that it gives the user time to abort
-                or deactivate the bridge if circumstances during the delay
-                period call for it. [Visual idea: code snippet - Sidekiq delay
-                call].
-              </p>
-
-              <p>
-                When the delay and retry options are combined, the delay period
-                between an unsuccessful request and subsequent retries will
-                grow exponentially with each retry as per the default logic in
-                the background job library applied (Sidekiq).
-                We accept this default logic because the user’s main concern
-                will be the guaranteed delay between the incoming webhook and
-                the <i>first</i> forward request attempt, while the delay
-                between retries is of lesser importance.
-                [Visual idea - Sidekiq algorithm for retry intervals].
-              </p>
-              <p>
-                In order to include sensitive information in the body or
-                headers of an outbound request, we allow the user to store
-                environmental variables.
-              </p>
-
-              <img src="./images/env_variables.png" class="img-fluid mb-3" />
-
-              <p>
-                Environmental variables are scoped to the bridge rather than
-                at the user level for a couple of reasons. Firstly, there is a
-                high likelihood of variable name collision at the user level
-                for repeating keys such as “password”. Secondly, by defining
-                and inspecting environmental variables on the same form where
-                they are applied, we can better adhere to our simple design
-                philosophy and goal of user friendliness by alleviating the
-                need to navigate to a configuration page to set or recollect
-                them. While it could be slightly inconvenient to duplicate
-                environmental variables for different bridges, we accept this
-                tradeoff as they're only expected to be set infrequently,
-                typically only once when defining a bridge.
-              </p>
-              <p>
-                To best protect the data, the values of an environmental
-                variable will be encrypted and filtered for the UI upon any save action
-                and cannot be viewed thereafter, leaving users with the option
-                of either referencing, deleting or reassigning them. For reasons of
-                brevity and familiarity, we selected “$env” as the name for
-                referencing the environmental variable namespace, which users
-                can do either from the header fields or in the payload. If a
-                "JWT-secret" key was stored as an environmental variable, it
-                would thus be accessible using the “$env.JWT-secret” syntax.
-              </p>
-
-              <img src="./images/headers.png" class="img-fluid mb-3" />
-
-              <h2 class="case-study-h2">2.2 Payload</h2>
-
-              <p>
-                GET requests will be useful in cases where users are more
-                interested in assessing responses than in forwarding data, yet
-                the majority of bridges are expected to be POST requests and
-                thus require a defined payload in the request body. We
-                contemplated two options for this feature, one of which was a
-                two-column table to be filled out with keys in the left and
-                values on the right. This approach, however, would be complicated by
-                the presence of nested values that would require multiple dropdowns
-                and soon become unwieldy. We therefore chose a second option of
-                requiring a raw JSON payload in a code editor since this delivers
-                a cleaner and more manageable interface.</p>
-
-              <img src="./images/payload.png" class="img-fluid mb-3" />
-
-              <p>To aid the user, we set a default
-                payload to be edited or tested as is, along with a JSON
-                linter. The “$payload” syntax accesses the inbound request
-                payload, so in the above example “$payload.message” accesses a
-                “message” key at the highest level of the inbound request
-                payload, while “$payload.nested.message” plucks the value
-                referenced by the “message” key of the “nested” object. As in the
-                header fields, “$env'' syntax could likewise be applied to reference
-                environmental variables within the payload.
-              </p>
-
-              <h2 class="case-study-h2">
-                2.3 Actions
-              </h2>
-              <p>
-                In order to operate as a switchboard for event-driven
-                workflows, users need the option of configuring bridges after
-                saving and activating them. Defining and saving a bridge
-                automatically activates it, whereafter it listens for inbound
-                requests to its endpoint.
-              </p>
-
-              <img src="./images/actions.png" class="img-fluid mb-3" />
-
-              <p>
-                Actions to the bridge are all collected within an “Actions”
-                modal one click away. We provide the option of deleting the
-                bridge entirely, toggling the active status (activate and
-                deactivate), or of aborting current ongoing requests in the
-                jobs queue - this will typically requests being delayed or retried.
-                This feature set is simple, yet paired with its neighboring
-                save button for editing, it exhausts all essential
-                configuration needs of a defined bridge.
-              </p>
-              <p>
-                With this single page, all the necessary fields are thus
-                provided to define a workflow between two apps. The interface
-                is simple, intuitive and focused on the necessary features,
-                with a couple of add-ons (delays and retries) that
-                provide useful options to the user without adding noteworthy
-                complexity.
-              </p>
-            </section>
-            <!-- End of 2. USER EXPERIENCE -->
-
-            <!-- 3. FRONTEND ARCHITECTURE -->
-            <section id="frontend-architecture">
-              <h1 class="case-study-h1">3. Frontend Architecture</h1>
-              <h2 class="case-study-h2">3.1 NextJS</h2>
-              <p>
-                Frontend frameworks have become an integral part of enterprise
-                web development. We selected NextJS as the optimal framework
-                for building out our React frontend because it leverages the
-                benefits of client-side rendered (CSR) apps, such as
-                responsiveness to user activity and decreased server load, as
-                well as benefits of server-side rendered (SSR) apps such as as search
-                engine optimization (SEO) and fast initial page loads. Added
-                advantages include ease-of-use, comprehensive documentation
-                and an active community. Applying NextJS, our initial page
-                load is server-side rendered while assets and pre-rendered
-                HTML for linked pages are loaded on the client, offering users
-                the experience of a single-page app (SPA). [ Visual idea:
-                diagram showing initial page request and subsequent requests
-                of pre-rendered pages ]
-              </p>
-
-              <h2 class="case-study-h2">3.2 Payload Editor</h2>
-              <p>
-                A crucial element of the app on the frontend is the
-                functionality and user-friendliness of the payload editor.
-                Since the editor should only support json, we had the option
-                of choosing a simple json editor for React such as
-                react-json-editor and react-json-view or more fully-featured,
-                multi-language-supporting editors such as CodeMirror, Ace and
-                Monaco. We decided to use an editor that offers multi-language
-                support to ease future extensions to other languages and to provide
-                a better IDE experience. We chose CodeMirror, a text editor written
-                in JavaScript for the browser because it is battle-tested,
-                contains the features we sought, yet lighter weight than Ace and
-                Monaco (that power VSCode and Cloud9 respectively), which
-                makes it a better fit for our use cases of rendering multiple
-                code editors on a single page with different purposes. The
-                react-codemirror2 wrapper for React facilitated a smooth
-                integration as a React component.
-                [Visual idea: CodeMirror implementation code
-                snippet ]
-              </p>
-
-              <p>
-                The versatility of CodeMirror furthermore lets us configure it as
-                read-only for inspecting past events and editable for
-                configuring a bridge, as well as interfacing it with a form
-                component when needed. Note that CodeMirror does not offer
-                support for Server Side Rendering (SSR), but as we employ
-                Client Side Rendering (CSR), we can retrieve editor state
-                asynchronously using React’s UseEffect hook in order to avoid
-                slowing down page loads. To improve the user experience, we
-                added a loading spinner that displays in place of each editor
-                until that editor is populated. [ Visual idea: loading spinner
-                ]
-              </p>
-
-              <p>
-                The end result is an intuitive editor containing aids that users
-                have come to expect from editors like VSCode, including
-                full-screen mode for expansive payload editing, syntax
-                highlighting, json linting, auto-indent and active line
-                highlighter. [ Visual idea: gif of payload in action showing
-                syntax, linter, active line et al. ]
-              </p>
-            </section>
-            <!-- End of 3. FRONTEND ARCHITECTURE -->
-
-            <!-- 4. SYSTEM ARCHITECTURE -->
-            <section id="system-architecture">
-              <h1 class="case-study-h1">4. System Architecture</h1>
-              <h2 class="case-study-h2">4.1 Background process</h2>
-              <p>
-                We needed a way to process events concurrently without holding
-                up the single-threaded server, and for this a background
-                processor was required. While Rails ships with ActiveJob, this
-                built-in processor is ill-suited for production since it
-                enqueues jobs in RAM, causing jobs to be cleared if the
-                process is interrupted or if the server is reset.
-              </p>
-
-              <p>
-                As a third-party library, Sidekiq is proven to integrate well
-                with Rails and is marketed as a “Simple, efficient background
-                processing for Ruby”. It runs concurrently and uses threads to
-                handle simultaneously jobs in the same process. A key reason for
-                choosing Sidekiq was performance, estimated to be up to twenty
-                times faster than alternative background processors. Secondly,
-                Sidekiq ships with a monitoring dashboard that lets us view
-                jobs in its queue, ongoing jobs and other information useful
-                to debugging - a feature that allowed us to develop our
-                business logic quicker than if we were without the dashboard
-                or had to implement one ourselves. The final reason for using
-                Sidekiq is its focus on distributed systems. A single redis
-                cache - the cache used by Sidekiq - can issue jobs to numerous
-                Sidekiq server instances.
-              </p>
-
-              <p>
-                The result is a job queue system that runs in tandem with our
-                main Rails API server that can easily scale horizontally and
-                vertically. [ Visual idea: Rails - Sidekiq - Redis interaction
-                ]
-              </p>
-
-              <h2 class="case-study-h2">4.2 Database Schema</h2>
-              <p>
-                For the database, we needed a schema that would let us rapidly
-                retrieve all data related to workflow events yet without
-                overloading the database with queries. Our initial database
-                design envisioned separate tables for most data elements of an
-                event: [ Visual idea: Initial database design ]
-              </p>
-
-              <p>
-                An implication of this would have been long join-queries such
-                as: [ Visual idea: hypothetical sql join statement to gather
-                data for event page ]
-              </p>
-
-              <p>
-                Such queries would both be difficult to work with, slow to
-                execute and tax the database needlessly. A better solution was
-                to make use of PostgreSQL’s jsonb data type that stores JSON
-                data. Hstore, which stores data as key-value pairs, would also
-                have been useful data is manipulated after saving
-                to the database since this would not require deserialization,
-                yet it would require serialization before sending it which
-                increases memory usage and costs. Because events in our
-                implementation are never edited and it’s individual parts
-                never queried, we opted to pool all event data into a single
-                JSON data structure to always be pulled from the database and
-                sent to the frontend as is. [ Visual idea: FCP (First
-                Contentful Paint) - page load metrics ]
-              </p>
-
-              <p>
-                The above metric [TODO: import metrics image] shows metric scores for the event page
-                loading in production. First Contentful Paint (FCP) marks the
-                time when the first text or images is visible to the user,
-                while Time to Interactive (TTI) is the time taken for the page
-                to become fully interactive. According to a statistics from
-                the HTTP Archive, “sites performing in the ninety-ninth
-                percentile render FCP in about 1.5 seconds...TTI in about 2.2
-                seconds”<sup>[4][5]</sup>, which means that our FCP load
-                of 600 ms and TTI of 1.2 seconds are both faster than 99
-                percent of websites. This performance can greatly be
-                attributed to the decision of using jsonb.
-              </p>
-
-              <h2 class="case-study-h2">4.3 Parsing</h2>
-              <p>
-                To implement the app there were numerous coding challenges
-                related to directing the workflow of a triggered bridge, not
-                least of which was the parsing of outbound headers (to
-                substitute environment variables) and outbound payload (to
-                substitute inbound payload variables and environment
-                variables). In addition, some values must be encrypted - to
-                prevent them from being saved in clear text - and filtered for
-                the user interface.
-              </p>
-
-              <p>
-                To parse headers, we inspect for the presence of the “$env”
-                indicating environment variables.
-                <img src="./images/parse_value.png" class="mx-auto d-block w-50 h-25" />
-              </p>
-
-              <p>
-                The fetch_environment_variable method then ensures that
-                “$env” references an actual key and fetches it from the database and
-                decrypts it. To encrypt and decrypt environment variables, we
-                apply Rails’ built-in ActiveSupport::MessageEncryptor.
-                <img src="./images/fetch_env_variable.png" class="mx-auto d-block w-75 h-25" />
-              </p>
-
-              <p>
-                For the payload, we iterate through the raw JSON as
-                represented by the user_data parameter.
-                <img src="./images/parse_payload.png" class="mx-auto d-block w-75 h-25" />
-              </p>
-
-              <p>
-                If the value includes a “$env” string we pass it to the same method
-                as with the parsing of headers. If it’s a hash, we recursively
-                call the parse_payload! function again, if it’s an array we
-                iterate and pass each value to the parse_payload! function
-                <img src="./images/parse_value_2.png" class="mx-auto d-block w-50 h-25" />
-                while if it includes “$payload” then we call a
-                fetch_payload_data method that returns the referenced inbound
-                value. To account for possible nested payload values, we
-                iterate in order to return the value of the innermost key.
-                <img src="./images/fetch_payload_data.png" class="mx-auto d-block w-75 h-25" />
-              </p>
-            </section>
-            <!-- End of 4. SYSTEM ARCHITECTURE -->
-
-            <!-- 5. CLOUD HOSTING -->
-            <section id="cloud-hosting">
-              <h1 class="case-study-h1">5. Cloud Hosting</h1>
-              <p>
-                [Visual ideas: overall AWS architecture plus detailed diagrams
-                of each part]
-              </p>
-              <h2 class="case-study-h2">5.1 Scaling and costs</h2>
-              <p>
-                A challenge in production was to find a hosting solution that
-                eases future vertical and horizontal scaling while maintaining
-                strict cost control. Scaling vertically, such as adding cpu or
-                memory, would be beneficial if the user-base growth is
-                concentrated in a specific region, while horizontal scaling
-                through added server instances in other regional data centers
-                could help the app remain performant (through lower latency)
-                to all users if user activity is more globally dispersed. As
-                BridgeAPI is currently maintained by three developers without
-                corporate backing, we also require the app to scale in a
-                cost-efficient manner.
-              </p>
-              <h2 class="case-study-h2">5.2 AWS Elastic Beanstalk</h2>
-              <p>
-                We chose a Platform as a Service (PaaS) in the form of AWS
-                Elastic Beanstalk (EB) to host the API server. With EB it’s
-                possible to scale both vertically and horizontally with only a
-                few clicks, while monitoring, reporting, health check and load
-                balancer for distributed systems make it easier for a small
-                team such as ours to manage it. In addition, it has
-                transparent and linear pricing rather than exponential price
-                jumps for common features as reported for other PaaS such as
-                Heroku.<sup>[6]</sup>
-              </p>
-              <h2 class="case-study-h2">5.3 Redis server</h2>
-              <p>
-                While we tried to apply a serverless solution to the greatest
-                extent possible for cost reasons, our reliance on
-                Sidekiq as a background job processor necessitates a running Redis
-                server in our AWS setup. AWS does offer a severless key-value
-                cache, DynamoDB, which is similar to Redis but unfortunately
-                Sidekiq does not support it. As a result, 60 percent of our
-                costs are estimated to be related to the Redis server since
-                AWS does not offer a serverless Redis cache, but we chose to
-                accept this steep proportion given the relatively modest total
-                expenses. Nonetheless, future cost cutting would likely entail
-                researching replacements for Sidekiq and Redis.
-              </p>
-              <h2 class="case-study-h2">5.4 AWS Aurora</h2>
-              <p>
-                AWS is more accommodating with regards to the database. While
-                we used PostgreSQL in development and had planned to use it in
-                production, we chose AWS Aurora instead as it’s a
-                PostgreSQL-compatible database that supports serverless
-                architectures, allowing us to follow a pay-per-use pricing
-                model. Moreover, using the AWS-native database lets us rely on
-                AWS to handle database scaling and monitoring for us.
-              </p>
-              <h2 class="case-study-h2">5.5 AWS Lambda</h2>
-              <p>
-                Finally, we are able to leverage a serverless service in the
-                form of AWS Lambda for the NextJS frontend, whereby
-                we’re freed from needing to manage servers as AWS Lambda
-                provisions these and tears them down as needed. Our server
-                assets (images, stylesheets and scripts) are stored in an S3
-                bucket integrated with AWS Cloudfront CDN, ensuring that our
-                assets can be cached and made available locally from the edge
-                location nearest the user.
-              </p>
-              <h2 class="case-study-h2">5.6 Results</h2>
-              <p>
-                The end result has been universally fast loads. Our total cost
-                is estimated to be 20 dollars per month of which Redis
-                accounts for 12 dollars. We’re also well equipped to handle an
-                increase in load from anywhere as the API server can be replicated to any
-                region within minutes.
-              </p>
-            </section>
-            <!-- End of 5. CLOUD HOSTING -->
-
-            <!-- FUTURE WORK -->
-            <section id="future-work">
-              <h1 class="case-study-h1">Future Work</h1>
-              <p>
-                One avenue of improvement to the user experience is to include
-                multiple data formats for receiving and forwarding requests.
-                Right now it’s only JSON-compatible, but XML could be extended
-                with minimal effort although it would deviate slightly from
-                the minimalist aesthetic of the bridge page.
-              </p>
-
-              <p>
-                Another idea, drawing from popular sites such as Zapier and
-                Pipedream, is to allow multiple-step workflows as opposed to
-                the current single-step limit. This would add significant
-                complexity to the app and cause it to depart from the niche
-                position it currently occupies between the single-direction
-                tools and multi-step workflow tools, but it could be justified
-                by user demand. In its current iteration, a workaround is
-                to define multiple bridges as endpoints for the same webhook
-                that could thereby trigger multiple actions with the same request - a
-                feasible solution as long as each request is independent of
-                the outcome of other requests. [ Visual idea: workaround in
-                action vs sequential workflow ]
-              </p>
-            </section>
-            <!-- End of FUTURE WORK -->
-
-            <!-- Section Team -->
-            <section id="team">
-              <!-- <div style="background-color: green"> -->
-              <h1 class="case-study-h1">Our Team</h1>
-              <!-- </div> -->
-            </section>
-            <!-- End of Section Team -->
-
-            <!-- Section References -->
-            <section id="references">
-              <!-- <div style="background-color: green"> -->
-              <h1 class="case-study-h1">References</h1>
-              <h2 class="case-study-h2">Existing solutions</h2>
-              <ul>
-                <li>
-                  <a href="zapier.com">Zapier</a>
-                </li>
-                <li>
-                  <a href="pipedream.com">Pipedream</a>
-                </li>
-                <li>
-                  <a href="postman.com">Postman</a>
-                </li>
-                <li>
-                  <a href="hookbin.com">Hookbin</a>
-                </li>
-              </ul>
-              <h2 class="case-study-h2">Libraries</h2>
-              <ul>
-                <li>
-                  <a href="https://codemirror.net/">CodeMirror</a>
-                </li>
-                <li>
-                  <a href="https://sidekiq.org/">SideKiq</a>
-                </li>
-              </ul>
-              <h2 class="case-study-h2">Other sources</h2>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17">
-                    APIs show Faster Growth Rate in 2019 than Previous Years<sup>[1]</sup>
-                  </a>
-                </li>
-                </li>
-                <li>
-                  <a href="https://blog.postman.com/api-growth-rate/">API Growth Continues to Skyrocket in
-                    2020<sup>[2]</sup>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17">JSON
-                    is Clearly the King of API Data Formats in 2020<sup>[3]</sup></a>
-                <li>
-                  <a href="https://web.dev/first-contentful-paint/">
-                    Web.dev - First Contentful Paint<sup>[4]</sup>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://web.dev/interactive/">
-                    Web.dev - Time to Interactive<sup>[5]</sup>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://codeburst.io/heroku-v-s-aws-elastic-beanstalk-1cc6f12ca3c7">
-                    Heroku v.s. AWS Elastic Beanstalk<sup>[6]</sup>
-                  </a>
-                </li>
-              </ul>
-              <!-- </div> -->
-            </section>
-            <!-- End of Section References -->
-          </div>
-          <!-- End of CASE STUDY -->
         </div>
-      </div>
-    </section>
-    <!-- End of Main Body -->
+      </section>
+      <!-- End of Cover -->
 
+      <!-- Section something -->
+      <section class="text-center text-white">
+        <div style="background-color: #184d47">
+          <h1 class="mb-0">Hello World</h1>
+        </div>
+      </section>
+      <!-- End of Section something -->
 
+      <!-- Section something -->
+      <section class="text-center text-white">
+        <div style="background-color: grey">
+          <h1 class="mb-0">Hello World</h1>
+        </div>
+      </section>
+      <!-- End of Section something -->
 
-    <footer class="mt-auto text-white-50">
-      <p class="mb-0" style="background-color: black">
-        Cover template for
-        <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
-        by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
-      </p>
-    </footer>
-  </div>
-</body>
+      <!-- Section something -->
+      <section class="text-center text-white">
+        <div style="background-color: #96bb7c">
+          <h1 class="mb-0">Hello World</h1>
+        </div>
+      </section>
+      <!-- End of Section something -->
 
+      <!-- Main Body -->
+      <section id="main">
+        <div class="container mt-4" style="margin-left: 0; margin-right: 0">
+          <div class="row">
+            <!-- TODO: Mobile size -->
+            <div class="col-md-3">
+              <nav id="case-study-nav" class="sticky-top top-25">
+                <ul>
+                  <li class="mb-2">
+                    <a href="#introduction" class="case-study-anchor">
+                      INTRODUCTION
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#user-experience" class="case-study-anchor">
+                      USER EXPERIENCE
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#frontend-architecture" class="case-study-anchor">
+                      FRONTEND ARCHITECTURE
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#system-architecture" class="case-study-anchor">
+                      SYSTEM ARCHITECTURE
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#cloud-hosting" class="case-study-anchor">
+                      CLOUD HOSTING
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#future-work" class="case-study-anchor">
+                      FUTURE WORK
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#team" class="case-study-anchor"> THE TEAM </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#references" class="case-study-anchor">
+                      REFERENCES
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- CASE STUDY -->
+            <div id="main-case-study" class="col-md-9 col-sm-12">
+              <h1>Case Study</h1>
+              <!-- 1. INTRODUCTION -->
+              <section id="introduction">
+                <h1 class="case-study-h1">1. Introduction</h1>
+                <h2 class="case-study-h2">1.1 BridgeAPI</h2>
+                <p>
+                  BridgeAPI is a free, open source web developer tool that
+                  receives, filters and forwards HTTP requests. This combination
+                  allows developers to set up event-driven workflows in a few
+                  simple steps with BridgeAPI as the bridge between apps.
+                </p>
+
+                <h2 class="case-study-h2">1.2 The API Economy</h2>
+                <p>
+                  Propelled by the rise in microservices, cloud computing,
+                  Internet of Things, and the general benefits of integrating
+                  diverse business applications, the API space has grown
+                  exponentially since especially the mid 2000s. ProgrammableWeb,
+                  a directory that lists public web-based APIs, documented a
+                  growth of 2000 APIs yearly to more than 23,000 by 2019.<sup
+                    >[1]</sup
+                  >
+                  Postman, the most used developer API tool, registered a
+                  ten-fold rise in API request folders, from 3.1 to 34.9 million
+                  between 2017 and 2020.<sup>[2]</sup> The integral role API
+                  requests plays in the budding API economy demands tools for
+                  developers to send, receive, monitor, and chain API requests.
+                </p>
+
+                <h2 class="case-study-h2">1.3 Current Tools</h2>
+                <p>
+                  Among developer tools used to <i>send</i> API requests,
+                  Postman is by far the most utilized.
+                </p>
+                <i>Postman</i>
+                <img
+                  src="./images/postman.png"
+                  class="img-fluid mb-3 h-75 d-block"
+                />
+
+                <p>
+                  It lets users select the request type and endpoint along with
+                  a host of optional settings including parameters, headers and
+                  body. It also allows for pre-request scripts, whereby a
+                  request can be delayed, or more advanced features like
+                  regularly scheduled requests. The response is subsequently
+                  rendered with corresponding status, time, size and body among
+                  other data. Postman is very intuitive to use and practically
+                  covers every conceivable aspect of an API request, yet it is
+                  limited in so far that any workflow involving Postman must
+                  originate with a Postman request - making it more useful as a
+                  testing tool for an API interface. Any need to integrate
+                  workflows triggered by webhooks will therefore require other
+                  tools.
+                </p>
+
+                <p>
+                  There are also practical tools to <i>receive</i> API requests.
+                </p>
+
+                <p>
+                  Hookbin.com is one such tool that provides a URL endpoint to
+                  receive webhooks which can then be inspected upon reception.
+                  Users can configure an automatic response that can be hard
+                  coded or include data from the incoming request.
+                </p>
+                <i>Hookbin.com</i>
+                <img
+                  src="./images/hookbin.png"
+                  class="img-fluid mb-3 h-25 w-75 d-block"
+                />
+                <p>
+                  Lastly, there are apps that provide for workflows by providing
+                  URL endpoints that, when pinged, trigger a user-defined
+                  workflow. Zapier, IFTTT and Pipedream are examples within this
+                  category.
+                </p>
+                <i>Pipedream</i>
+                <img
+                  src="./images/pipedream.png"
+                  class="img-fluid mb-3 w-75 d-block"
+                />
+                <i>Zapier</i>
+                <img
+                  src="./images/zapier.png"
+                  class="img-fluid mb-3 w-75 h-25 d-block"
+                />
+
+                <p>
+                  These fully-fledged sites are built to integrate large numbers
+                  of predefined apps, which are selected with a click and the
+                  granting of permission to access the external app from the
+                  workflow site. With this access granted, any number of events
+                  (not merely webhooks) within the external app can trigger the
+                  user-defined workflow. These sites are therefore popular with
+                  retail users since the intricacies of API requests are
+                  abstracted away. Furthermore, these sites are proprietary,
+                  involving a limited free tier and scaled paid tiers.
+                </p>
+
+                <h2 class="case-study-h2">1.4 BridgeAPI Niche</h2>
+                <p>
+                  Within this mapping of the landscape of online API tools, a
+                  gap emerges between the pure developer tools and the retail
+                  workflow tools. We view BridgeAPI as an attempt to occupy this
+                  space as an open source developer tool to establish workflows.
+                  It maintains the simplicity of the purely sending or receiving
+                  API developer tools, while combining the functionality of
+                  both. Similarly to the developer tools, BridgeAPI requests no
+                  permissions but entrusts the user with configuring the
+                  endpoint, headers and body of an API request. As a functioning
+                  workflow tool, BridgeAPI can act as a switchboard to monitor
+                  all API-driven single-step workflows between two apps. It is
+                  this ambition which framed our user interface as we sought to
+                  create an intuitive and simple tool, in accordance with the
+                  KISS principle, that nonetheless contains the features
+                  necessary to fulfill a developer’s workflow needs. [Visual
+                  idea: Table showing features of the different tools]
+                </p>
+              </section>
+              <!-- End of 1. INTRODUCTION -->
+
+              <!-- 2. USER EXPERIENCE -->
+              <section id="user-experience">
+                <h1 class="case-study-h1">2. User Experience</h1>
+                <h2 class="case-study-h2">2.1 Headers and Settings</h2>
+                <p>
+                  The most demanding part aspect of the app from the user's
+                  perspective is the configuration of the workflow, which we
+                  refer to as a <i>bridge</i>. The ideal we strived towards was
+                  that of a self-explanatory interface, where the headings of
+                  each form and field sufficiently guides the user through the
+                  setup.
+                </p>
+
+                <img
+                  src="./images/url_and_features.png"
+                  class="img-fluid mb-3"
+                />
+
+                <p>
+                  In addition to providing a bridgeAPI endpoint, the outbound
+                  (forwarding) URL endpoint and method dropdown fields
+                  constitute the minimum viable settings for the workflow to
+                  function. While any HTTP request can be selected, we set the
+                  default to POST as we envision forwarding data in a request
+                  body as the most frequent function of a bridge.
+                </p>
+
+                <p>
+                  The user can set any number of headers, but BridgeAPI is
+                  opinionated regarding the content type which is hard coded to
+                  application/json. The following chart from
+                  <i>ProgrammableWeb</i>
+                  between March 2018 and March 2020 shows the preponderance of
+                  JSON and query strings as the standard data formats for API
+                  requests, each accounting for more than ten times the number
+                  of APIs accepting XML as the data format. We therefore chose
+                  not to add XML support for the first iteration of BridgeAPI
+                  given the added complexity required for what would likely be
+                  limited use cases.
+                </p>
+
+                <img
+                  src="./images/api_stat.png"
+                  class="mb-3 w-50 mx-auto d-block"
+                />
+
+                <p>
+                  Delays and retries are the two optional ‘extras’ in the bridge
+                  configuration. A bridge allows for 0, 1, 3, and 5 retries,
+                  where a retry is triggered in case the of an unsuccessful
+                  response to an outbound request. We define an unsuccessful
+                  request as any request that is either incomplete due to an
+                  error or that completed but with a response code equal to or
+                  greater than 300. While redirect responses (300s) could be
+                  defined as successful, we chose to define them as unsuccessful
+                  to account for temporary redirects, whereby a retry could
+                  conceivably generate a response code in the 200s. The reason
+                  we included the retry feature was to let the user set the
+                  importance of successfully completing the outbound request, so
+                  that 5 retries could be set for consequential bridges or in
+                  cases where the receiving API is less reliable. [Visual idea:
+                  code snippet for retries functionality].
+                </p>
+
+                <p>
+                  In addition, users can decide between an instant forwarding of
+                  the request or a delay of 15 minutes, 30 minutes, 1 hour, or 1
+                  day. For certain workflows, we decided it would be logical to
+                  insert a delay between links in a workflow chain. For example,
+                  if a user wanted to snooze all forwarding requests of a bridge
+                  for a day, the 1 day delay option would ensure that all
+                  incoming requests are received and held until the following
+                  day. Another advantage is that it gives the user time to abort
+                  or deactivate the bridge if circumstances during the delay
+                  period call for it. [Visual idea: code snippet - Sidekiq delay
+                  call].
+                </p>
+
+                <p>
+                  When the delay and retry options are combined, the delay
+                  period between an unsuccessful request and subsequent retries
+                  will grow exponentially with each retry as per the default
+                  logic in the background job library applied (Sidekiq). We
+                  accept this default logic because the user’s main concern will
+                  be the guaranteed delay between the incoming webhook and the
+                  <i>first</i> forward request attempt, while the delay between
+                  retries is of lesser importance. [Visual idea - Sidekiq
+                  algorithm for retry intervals].
+                </p>
+                <p>
+                  In order to include sensitive information in the body or
+                  headers of an outbound request, we allow the user to store
+                  environmental variables.
+                </p>
+
+                <img src="./images/env_variables.png" class="img-fluid mb-3" />
+
+                <p>
+                  Environmental variables are scoped to the bridge rather than
+                  at the user level for a couple of reasons. Firstly, there is a
+                  high likelihood of variable name collision at the user level
+                  for repeating keys such as “password”. Secondly, by defining
+                  and inspecting environmental variables on the same form where
+                  they are applied, we can better adhere to our simple design
+                  philosophy and goal of user friendliness by alleviating the
+                  need to navigate to a configuration page to set or recollect
+                  them. While it could be slightly inconvenient to duplicate
+                  environmental variables for different bridges, we accept this
+                  tradeoff as they're only expected to be set infrequently,
+                  typically only once when defining a bridge.
+                </p>
+                <p>
+                  To best protect the data, the values of an environmental
+                  variable will be encrypted and filtered for the UI upon any
+                  save action and cannot be viewed thereafter, leaving users
+                  with the option of either referencing, deleting or reassigning
+                  them. For reasons of brevity and familiarity, we selected
+                  “$env” as the name for referencing the environmental variable
+                  namespace, which users can do either from the header fields or
+                  in the payload. If a "JWT-secret" key was stored as an
+                  environmental variable, it would thus be accessible using the
+                  “$env.JWT-secret” syntax.
+                </p>
+
+                <img src="./images/headers.png" class="img-fluid mb-3" />
+
+                <h2 class="case-study-h2">2.2 Payload</h2>
+
+                <p>
+                  GET requests will be useful in cases where users are more
+                  interested in assessing responses than in forwarding data, yet
+                  the majority of bridges are expected to be POST requests and
+                  thus require a defined payload in the request body. We
+                  contemplated two options for this feature, one of which was a
+                  two-column table to be filled out with keys in the left and
+                  values on the right. This approach, however, would be
+                  complicated by the presence of nested values that would
+                  require multiple dropdowns and soon become unwieldy. We
+                  therefore chose a second option of requiring a raw JSON
+                  payload in a code editor since this delivers a cleaner and
+                  more manageable interface.
+                </p>
+
+                <img src="./images/payload.png" class="img-fluid mb-3" />
+
+                <p>
+                  To aid the user, we set a default payload to be edited or
+                  tested as is, along with a JSON linter. The “$payload” syntax
+                  accesses the inbound request payload, so in the above example
+                  “$payload.message” accesses a “message” key at the highest
+                  level of the inbound request payload, while
+                  “$payload.nested.message” plucks the value referenced by the
+                  “message” key of the “nested” object. As in the header fields,
+                  “$env'' syntax could likewise be applied to reference
+                  environmental variables within the payload.
+                </p>
+
+                <h2 class="case-study-h2">2.3 Actions</h2>
+                <p>
+                  In order to operate as a switchboard for event-driven
+                  workflows, users need the option of configuring bridges after
+                  saving and activating them. Defining and saving a bridge
+                  automatically activates it, whereafter it listens for inbound
+                  requests to its endpoint.
+                </p>
+
+                <img src="./images/actions.png" class="img-fluid mb-3" />
+
+                <p>
+                  Actions to the bridge are all collected within an “Actions”
+                  modal one click away. We provide the option of deleting the
+                  bridge entirely, toggling the active status (activate and
+                  deactivate), or of aborting current ongoing requests in the
+                  jobs queue - this will typically requests being delayed or
+                  retried. This feature set is simple, yet paired with its
+                  neighboring save button for editing, it exhausts all essential
+                  configuration needs of a defined bridge.
+                </p>
+                <p>
+                  With this single page, all the necessary fields are thus
+                  provided to define a workflow between two apps. The interface
+                  is simple, intuitive and focused on the necessary features,
+                  with a couple of add-ons (delays and retries) that provide
+                  useful options to the user without adding noteworthy
+                  complexity.
+                </p>
+              </section>
+              <!-- End of 2. USER EXPERIENCE -->
+
+              <!-- 3. FRONTEND ARCHITECTURE -->
+              <section id="frontend-architecture">
+                <h1 class="case-study-h1">3. Frontend Architecture</h1>
+                <h2 class="case-study-h2">3.1 NextJS</h2>
+                <p>
+                  Frontend frameworks have become an integral part of enterprise
+                  web development. We selected NextJS as the optimal framework
+                  for building out our React frontend because it leverages the
+                  benefits of client-side rendered (CSR) apps, such as
+                  responsiveness to user activity and decreased server load, as
+                  well as benefits of server-side rendered (SSR) apps such as as
+                  search engine optimization (SEO) and fast initial page loads.
+                  Added advantages include ease-of-use, comprehensive
+                  documentation and an active community. Applying NextJS, our
+                  initial page load is server-side rendered while assets and
+                  pre-rendered HTML for linked pages are loaded on the client,
+                  offering users the experience of a single-page app (SPA). [
+                  Visual idea: diagram showing initial page request and
+                  subsequent requests of pre-rendered pages ]
+                </p>
+
+                <h2 class="case-study-h2">3.2 Payload Editor</h2>
+                <p>
+                  A crucial element of the app on the frontend is the
+                  functionality and user-friendliness of the payload editor.
+                  Since the editor should only support json, we had the option
+                  of choosing a simple json editor for React such as
+                  react-json-editor and react-json-view or more fully-featured,
+                  multi-language-supporting editors such as CodeMirror, Ace and
+                  Monaco. We decided to use an editor that offers multi-language
+                  support to ease future extensions to other languages and to
+                  provide a better IDE experience. We chose CodeMirror, a text
+                  editor written in JavaScript for the browser because it is
+                  battle-tested, contains the features we sought, yet lighter
+                  weight than Ace and Monaco (that power VSCode and Cloud9
+                  respectively), which makes it a better fit for our use cases
+                  of rendering multiple code editors on a single page with
+                  different purposes. The react-codemirror2 wrapper for React
+                  facilitated a smooth integration as a React component. [Visual
+                  idea: CodeMirror implementation code snippet ]
+                </p>
+
+                <p>
+                  The versatility of CodeMirror furthermore lets us configure it
+                  as read-only for inspecting past events and editable for
+                  configuring a bridge, as well as interfacing it with a form
+                  component when needed. Note that CodeMirror does not offer
+                  support for Server Side Rendering (SSR), but as we employ
+                  Client Side Rendering (CSR), we can retrieve editor state
+                  asynchronously using React’s UseEffect hook in order to avoid
+                  slowing down page loads. To improve the user experience, we
+                  added a loading spinner that displays in place of each editor
+                  until that editor is populated. [ Visual idea: loading spinner
+                  ]
+                </p>
+
+                <p>
+                  The end result is an intuitive editor containing aids that
+                  users have come to expect from editors like VSCode, including
+                  full-screen mode for expansive payload editing, syntax
+                  highlighting, json linting, auto-indent and active line
+                  highlighter. [ Visual idea: gif of payload in action showing
+                  syntax, linter, active line et al. ]
+                </p>
+              </section>
+              <!-- End of 3. FRONTEND ARCHITECTURE -->
+
+              <!-- 4. SYSTEM ARCHITECTURE -->
+              <section id="system-architecture">
+                <h1 class="case-study-h1">4. System Architecture</h1>
+                <h2 class="case-study-h2">4.1 Background process</h2>
+                <p>
+                  We needed a way to process events concurrently without holding
+                  up the single-threaded server, and for this a background
+                  processor was required. While Rails ships with ActiveJob, this
+                  built-in processor is ill-suited for production since it
+                  enqueues jobs in RAM, causing jobs to be cleared if the
+                  process is interrupted or if the server is reset.
+                </p>
+
+                <p>
+                  As a third-party library, Sidekiq is proven to integrate well
+                  with Rails and is marketed as a “Simple, efficient background
+                  processing for Ruby”. It runs concurrently and uses threads to
+                  handle simultaneously jobs in the same process. A key reason
+                  for choosing Sidekiq was performance, estimated to be up to
+                  twenty times faster than alternative background processors.
+                  Secondly, Sidekiq ships with a monitoring dashboard that lets
+                  us view jobs in its queue, ongoing jobs and other information
+                  useful to debugging - a feature that allowed us to develop our
+                  business logic quicker than if we were without the dashboard
+                  or had to implement one ourselves. The final reason for using
+                  Sidekiq is its focus on distributed systems. A single redis
+                  cache - the cache used by Sidekiq - can issue jobs to numerous
+                  Sidekiq server instances.
+                </p>
+
+                <p>
+                  The result is a job queue system that runs in tandem with our
+                  main Rails API server that can easily scale horizontally and
+                  vertically. [ Visual idea: Rails - Sidekiq - Redis interaction
+                  ]
+                </p>
+
+                <h2 class="case-study-h2">4.2 Database Schema</h2>
+                <p>
+                  For the database, we needed a schema that would let us rapidly
+                  retrieve all data related to workflow events yet without
+                  overloading the database with queries. Our initial database
+                  design envisioned separate tables for most data elements of an
+                  event: [ Visual idea: Initial database design ]
+                </p>
+
+                <p>
+                  An implication of this would have been long join-queries such
+                  as: [ Visual idea: hypothetical sql join statement to gather
+                  data for event page ]
+                </p>
+
+                <p>
+                  Such queries would both be difficult to work with, slow to
+                  execute and tax the database needlessly. A better solution was
+                  to make use of PostgreSQL’s jsonb data type that stores JSON
+                  data. Hstore, which stores data as key-value pairs, would also
+                  have been useful data is manipulated after saving to the
+                  database since this would not require deserialization, yet it
+                  would require serialization before sending it which increases
+                  memory usage and costs. Because events in our implementation
+                  are never edited and it’s individual parts never queried, we
+                  opted to pool all event data into a single JSON data structure
+                  to always be pulled from the database and sent to the frontend
+                  as is. [ Visual idea: FCP (First Contentful Paint) - page load
+                  metrics ]
+                </p>
+
+                <p>
+                  The above metric [TODO: import metrics image] shows metric
+                  scores for the event page loading in production. First
+                  Contentful Paint (FCP) marks the time when the first text or
+                  images is visible to the user, while Time to Interactive (TTI)
+                  is the time taken for the page to become fully interactive.
+                  According to a statistics from the HTTP Archive, “sites
+                  performing in the ninety-ninth percentile render FCP in about
+                  1.5 seconds...TTI in about 2.2 seconds”<sup>[4][5]</sup>,
+                  which means that our FCP load of 600 ms and TTI of 1.2 seconds
+                  are both faster than 99 percent of websites. This performance
+                  can greatly be attributed to the decision of using jsonb.
+                </p>
+
+                <h2 class="case-study-h2">4.3 Parsing</h2>
+                <p>
+                  To implement the app there were numerous coding challenges
+                  related to directing the workflow of a triggered bridge, not
+                  least of which was the parsing of outbound headers (to
+                  substitute environment variables) and outbound payload (to
+                  substitute inbound payload variables and environment
+                  variables). In addition, some values must be encrypted - to
+                  prevent them from being saved in clear text - and filtered for
+                  the user interface.
+                </p>
+
+                <p>
+                  To parse headers, we inspect for the presence of the “$env”
+                  indicating environment variables.
+                  <img
+                    src="./images/parse_value.png"
+                    class="mx-auto d-block w-50 h-25"
+                  />
+                </p>
+
+                <p>
+                  The fetch_environment_variable method then ensures that “$env”
+                  references an actual key and fetches it from the database and
+                  decrypts it. To encrypt and decrypt environment variables, we
+                  apply Rails’ built-in ActiveSupport::MessageEncryptor.
+                  <img
+                    src="./images/fetch_env_variable.png"
+                    class="mx-auto d-block w-75 h-25"
+                  />
+                </p>
+
+                <p>
+                  For the payload, we iterate through the raw JSON as
+                  represented by the user_data parameter.
+                  <img
+                    src="./images/parse_payload.png"
+                    class="mx-auto d-block w-75 h-25"
+                  />
+                </p>
+
+                <p>
+                  If the value includes a “$env” string we pass it to the same
+                  method as with the parsing of headers. If it’s a hash, we
+                  recursively call the parse_payload! function again, if it’s an
+                  array we iterate and pass each value to the parse_payload!
+                  function
+                  <img
+                    src="./images/parse_value_2.png"
+                    class="mx-auto d-block w-50 h-25"
+                  />
+                  while if it includes “$payload” then we call a
+                  fetch_payload_data method that returns the referenced inbound
+                  value. To account for possible nested payload values, we
+                  iterate in order to return the value of the innermost key.
+                  <img
+                    src="./images/fetch_payload_data.png"
+                    class="mx-auto d-block w-75 h-25"
+                  />
+                </p>
+              </section>
+              <!-- End of 4. SYSTEM ARCHITECTURE -->
+
+              <!-- 5. CLOUD HOSTING -->
+              <section id="cloud-hosting">
+                <h1 class="case-study-h1">5. Cloud Hosting</h1>
+                <p>
+                  [Visual ideas: overall AWS architecture plus detailed diagrams
+                  of each part]
+                </p>
+                <h2 class="case-study-h2">5.1 Scaling and costs</h2>
+                <p>
+                  A challenge in production was to find a hosting solution that
+                  eases future vertical and horizontal scaling while maintaining
+                  strict cost control. Scaling vertically, such as adding cpu or
+                  memory, would be beneficial if the user-base growth is
+                  concentrated in a specific region, while horizontal scaling
+                  through added server instances in other regional data centers
+                  could help the app remain performant (through lower latency)
+                  to all users if user activity is more globally dispersed. As
+                  BridgeAPI is currently maintained by three developers without
+                  corporate backing, we also require the app to scale in a
+                  cost-efficient manner.
+                </p>
+                <h2 class="case-study-h2">5.2 AWS Elastic Beanstalk</h2>
+                <p>
+                  We chose a Platform as a Service (PaaS) in the form of AWS
+                  Elastic Beanstalk (EB) to host the API server. With EB it’s
+                  possible to scale both vertically and horizontally with only a
+                  few clicks, while monitoring, reporting, health check and load
+                  balancer for distributed systems make it easier for a small
+                  team such as ours to manage it. In addition, it has
+                  transparent and linear pricing rather than exponential price
+                  jumps for common features as reported for other PaaS such as
+                  Heroku.<sup>[6]</sup>
+                </p>
+                <h2 class="case-study-h2">5.3 Redis server</h2>
+                <p>
+                  While we tried to apply a serverless solution to the greatest
+                  extent possible for cost reasons, our reliance on Sidekiq as a
+                  background job processor necessitates a running Redis server
+                  in our AWS setup. AWS does offer a severless key-value cache,
+                  DynamoDB, which is similar to Redis but unfortunately Sidekiq
+                  does not support it. As a result, 60 percent of our costs are
+                  estimated to be related to the Redis server since AWS does not
+                  offer a serverless Redis cache, but we chose to accept this
+                  steep proportion given the relatively modest total expenses.
+                  Nonetheless, future cost cutting would likely entail
+                  researching replacements for Sidekiq and Redis.
+                </p>
+                <h2 class="case-study-h2">5.4 AWS Aurora</h2>
+                <p>
+                  AWS is more accommodating with regards to the database. While
+                  we used PostgreSQL in development and had planned to use it in
+                  production, we chose AWS Aurora instead as it’s a
+                  PostgreSQL-compatible database that supports serverless
+                  architectures, allowing us to follow a pay-per-use pricing
+                  model. Moreover, using the AWS-native database lets us rely on
+                  AWS to handle database scaling and monitoring for us.
+                </p>
+                <h2 class="case-study-h2">5.5 AWS Lambda</h2>
+                <p>
+                  Finally, we are able to leverage a serverless service in the
+                  form of AWS Lambda for the NextJS frontend, whereby we’re
+                  freed from needing to manage servers as AWS Lambda provisions
+                  these and tears them down as needed. Our server assets
+                  (images, stylesheets and scripts) are stored in an S3 bucket
+                  integrated with AWS Cloudfront CDN, ensuring that our assets
+                  can be cached and made available locally from the edge
+                  location nearest the user.
+                </p>
+                <h2 class="case-study-h2">5.6 Results</h2>
+                <p>
+                  The end result has been universally fast loads. Our total cost
+                  is estimated to be 20 dollars per month of which Redis
+                  accounts for 12 dollars. We’re also well equipped to handle an
+                  increase in load from anywhere as the API server can be
+                  replicated to any region within minutes.
+                </p>
+              </section>
+              <!-- End of 5. CLOUD HOSTING -->
+
+              <!-- FUTURE WORK -->
+              <section id="future-work">
+                <h1 class="case-study-h1">Future Work</h1>
+                <p>
+                  One avenue of improvement to the user experience is to include
+                  multiple data formats for receiving and forwarding requests.
+                  Right now it’s only JSON-compatible, but XML could be extended
+                  with minimal effort although it would deviate slightly from
+                  the minimalist aesthetic of the bridge page.
+                </p>
+
+                <p>
+                  Another idea, drawing from popular sites such as Zapier and
+                  Pipedream, is to allow multiple-step workflows as opposed to
+                  the current single-step limit. This would add significant
+                  complexity to the app and cause it to depart from the niche
+                  position it currently occupies between the single-direction
+                  tools and multi-step workflow tools, but it could be justified
+                  by user demand. In its current iteration, a workaround is to
+                  define multiple bridges as endpoints for the same webhook that
+                  could thereby trigger multiple actions with the same request -
+                  a feasible solution as long as each request is independent of
+                  the outcome of other requests. [ Visual idea: workaround in
+                  action vs sequential workflow ]
+                </p>
+              </section>
+              <!-- End of FUTURE WORK -->
+
+              <!-- Section Team -->
+              <section id="team">
+                <h1 class="case-study-h1 text-center mb-5">Our Team</h1>
+                <div class="row mb-5">
+                  <div class="mx-auto col-md-8 col-sm-10">
+                    <p class="team-message text-center">
+                      We are looking forward to new opportunities. Please
+                      contact us if this project interested you, or if you have
+                      any questions!
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row mx-auto">
+                  <!-- Andrew -->
+                  <div class="col-md-4 col-sm-12">
+                    <img
+                      src="images/square.jpg"
+                      class="img-fluid avatar mb-2"
+                    />
+                    <h4 class="text-center mb-3">Andrew Crotwell</h4>
+                    <p class="text-center">Asheville, NC</p>
+
+                    <div class="row text-center mb-4">
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/mail-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/web-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/linkedin-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- William -->
+                  <div class="col-md-4 col-sm-12">
+                    <img
+                      src="images/square.jpg"
+                      class="img-fluid avatar mb-2"
+                    />
+                    <h4 class="text-center mb-3">William Jackson</h4>
+                    <p class="text-center">Asheville, NC</p>
+
+                    <div class="row text-center mb-4">
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/mail-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/web-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/linkedin-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Angel -->
+                  <div class="col-md-4 col-sm-12">
+                    <img
+                      src="images/square.jpg"
+                      class="img-fluid avatar mb-2"
+                    />
+                    <h4 class="text-center mb-3">Angel Ruiz-Bates</h4>
+                    <p class="text-center">Asheville, NC</p>
+
+                    <div class="row text-center mb-4">
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/mail-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/web-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+
+                      <div class="col">
+                        <a href="#">
+                          <img
+                            src="images/linkedin-icon.png"
+                            class="img-fluid person-icon"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- </div> -->
+              </section>
+              <!-- End of Section Team -->
+
+              <!-- Section References -->
+              <section id="references">
+                <!-- <div style="background-color: green"> -->
+                <h1 class="case-study-h1">References</h1>
+                <h2 class="case-study-h2">Existing solutions</h2>
+                <ul>
+                  <li>
+                    <a href="zapier.com">Zapier</a>
+                  </li>
+                  <li>
+                    <a href="pipedream.com">Pipedream</a>
+                  </li>
+                  <li>
+                    <a href="postman.com">Postman</a>
+                  </li>
+                  <li>
+                    <a href="hookbin.com">Hookbin</a>
+                  </li>
+                </ul>
+                <h2 class="case-study-h2">Libraries</h2>
+                <ul>
+                  <li>
+                    <a href="https://codemirror.net/">CodeMirror</a>
+                  </li>
+                  <li>
+                    <a href="https://sidekiq.org/">SideKiq</a>
+                  </li>
+                </ul>
+                <h2 class="case-study-h2">Other sources</h2>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17"
+                    >
+                      APIs show Faster Growth Rate in 2019 than Previous
+                      Years<sup>[1]</sup>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://blog.postman.com/api-growth-rate/">
+                      API Growth Continues to Skyrocket in2020<sup>[2]</sup>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.programmableweb.com/news/apis-show-faster-growth-rate-2019-previous-years/research/2019/07/17"
+                    >
+                      JSON is Clearly the King of API Data Formats in 2020<sup
+                        >[3]</sup
+                      ></a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="https://web.dev/first-contentful-paint/">
+                      Web.dev - First Contentful Paint<sup>[4]</sup>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://web.dev/interactive/">
+                      Web.dev - Time to Interactive<sup>[5]</sup>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://codeburst.io/heroku-v-s-aws-elastic-beanstalk-1cc6f12ca3c7"
+                    >
+                      Heroku v.s. AWS Elastic Beanstalk<sup>[6]</sup>
+                    </a>
+                  </li>
+                </ul>
+                <!-- </div> -->
+              </section>
+              <!-- End of Section References -->
+            </div>
+            <!-- End of CASE STUDY -->
+          </div>
+        </div>
+      </section>
+      <!-- End of Main Body -->
+
+      <footer class="mt-auto text-white-50">
+        <p class="mb-0" style="background-color: black">
+          Cover template for
+          <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
+          by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
