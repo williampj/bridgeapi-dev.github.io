@@ -38,6 +38,10 @@
   color: rgb(168, 160, 149);
 }
 
+.case-study-anchor:hover{
+  color: #184d47;
+}
+
 nav ul li {
   list-style: circle;
 }
@@ -47,7 +51,14 @@ nav ul li {
 }
 
 .active {
-  color: red;
+  color: #184d47;
+  font-weight: 700;
+  list-style: disc !important;
+}
+
+.active > .case-study-anchor {
+  color: #184d47;
+  font-weight: 700;
 }
 
 /* Uncategorized */

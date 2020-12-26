@@ -19,7 +19,7 @@ function handleCaseStudyNav() {
   const handleNavActive = async () => {
     caseStudyTitles.forEach((title, idx) => {
       if (
-        window.pageYOffset >= title.offsetTop
+        window.pageYOffset >= title.offsetTop - 10
         && window.pageYOffset <= caseStudyTitles[idx + 1].offsetTop
       ) {
         if (activeLi) activeLi.classList.remove('active');
