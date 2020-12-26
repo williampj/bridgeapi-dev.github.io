@@ -1,5 +1,5 @@
 {
-  "name": "bridgeapi_case_study",
+  "name": "bridgeapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/williampj/BridgeAPI-case-study.git"
+    "url": "git+https://github.com/andrewc910/bridgeapi.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/williampj/BridgeAPI-case-study/issues"
+    "url": "https://github.com/andrewc910/bridgeapi/issues"
   },
-  "homepage": "https://github.com/williampj/BridgeAPI-case-study#readme",
+  "homepage": "https://github.com/andrewc910/bridgeapi#readme",
   "devDependencies": {
-    "eslint": "^7.16.0"
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }

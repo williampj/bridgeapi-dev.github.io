@@ -46,6 +46,10 @@ nav ul li {
   top: 200px;
 }
 
+.active {
+  color: red;
+}
+
 /* Uncategorized */
 .github-link {
   position: sticky;
