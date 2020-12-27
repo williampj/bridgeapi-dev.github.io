@@ -3,6 +3,7 @@
     1. General Body
     2. Case Study
     3. Team
+    4. Cover Section
     X. Media Queries
 */
 
@@ -76,12 +77,24 @@ nav ul li {
   font-size: 1.3rem;
 }
 
+/* 4. Cover Section */
+.cover-logo {
+  max-width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* Uncategorized */
-.github-link {
-  position: sticky;
-  float: right;
+#github-logo {
+  cursor: pointer;
+  width: 35px;
+  position: fixed;
   top: 20px;
   right: 20px;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
 }
 
 /* Media Queries */
@@ -89,6 +102,17 @@ nav ul li {
 @media (min-device-width: 0) and (max-device-width: 575px) {
   /* X.2 CASE STUDY */
   #case-study-nav {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .cover-logo {
+    max-width: 80%;
+  }
+
+  #github-logo {
     display: none;
   }
 }
@@ -98,6 +122,13 @@ nav ul li {
   /* X.2 CASE STUDY */
   #case-study-nav {
     display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .cover-logo {
+    max-width: 80%;
   }
 }
 
