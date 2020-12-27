@@ -97,6 +97,13 @@ nav ul li {
   border-radius: 10px;
 }
 
+code {
+  background-color: #f1f1f1;
+  padding: 3px;
+  border-radius: 4px;
+  /* color: #184d47; */
+}
+
 /* Media Queries */
 /* xs */
 @media (min-device-width: 0) and (max-device-width: 575px) {

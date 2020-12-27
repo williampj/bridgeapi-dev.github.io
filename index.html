@@ -174,6 +174,7 @@
               <section id="introduction">
                 <h1 class="case-study-h1">1. Introduction</h1>
                 <h2 class="case-study-h2">1.1 BridgeAPI</h2>
+
                 <p>
                   BridgeAPI is a free, open source web developer tool that
                   receives, filters and forwards HTTP requests. This combination
@@ -411,11 +412,11 @@
                   save action and cannot be viewed thereafter, leaving users
                   with the option of either referencing, deleting or reassigning
                   them. For reasons of brevity and familiarity, we selected
-                  “$env” as the name for referencing the environmental variable
-                  namespace, which users can do either from the header fields or
-                  in the payload. If a "JWT-secret" key was stored as an
-                  environmental variable, it would thus be accessible using the
-                  “$env.JWT-secret” syntax.
+                  <code>$env</code> as the name for referencing the
+                  environmental variable namespace, which users can do either
+                  from the header fields or in the payload. If a "JWT-secret"
+                  key was stored as an environmental variable, it would thus be
+                  accessible using the <code>$env.JWT-secret</code> syntax.
                 </p>
 
                 <img
@@ -447,14 +448,14 @@
 
                 <p>
                   To aid the user, we set a default payload to be edited or
-                  tested as is, along with a JSON linter. The “$payload” syntax
-                  accesses the inbound request payload, so in the above example
-                  “$payload.message” accesses a “message” key at the highest
-                  level of the inbound request payload, while
-                  “$payload.nested.message” plucks the value referenced by the
-                  “message” key of the “nested” object. As in the header fields,
-                  “$env'' syntax could likewise be applied to reference
-                  environmental variables within the payload.
+                  tested as is, along with a JSON linter. The
+                  <code>$payload</code> syntax accesses the inbound request
+                  payload, so in the above example <code>$payload.message</code> accesses a
+                  <code>message</code> key at the highest level of the inbound request
+                  payload, while <code>$payload.nested.message</code> plucks the value
+                  referenced by the <code>message</code> key of the <code>nested</code> object. As in
+                  the header fields, <code>$env</code> syntax could likewise be applied to
+                  reference environmental variables within the payload.
                 </p>
 
                 <h2 class="case-study-h2">2.3 Actions</h2>
