@@ -54,6 +54,19 @@
   </head>
 
   <body class="d-flex">
+    <div class="logo-links">
+      <!-- <p id="redpoint-logo">
+        <img src="./images/logos/redpoint-brand-logo_plane-only.png" />
+      </p> -->
+      <a href="https://github.com/bridgeapi-dev" target="_blank">
+        <img
+          src="./images/logos/github_black.png"
+          alt="github logo"
+          id="github-logo"
+        />
+      </a>
+    </div>
+
     <div class="h-100">
       <!-- Cover -->
       <section
@@ -64,10 +77,10 @@
             id="cover"
             class="d-flex flex-column justify-content-center page-main"
           >
-            <img
-              src="./images/logos/logo.svg"
-              class="justify-self-center d-flex align-self-center mw-100"
-            />
+            <div class="cover-logo">
+              <img src="./images/logos/logo.svg" class="mw-100" />
+            </div>
+
             <p class="lead d-flex align-self-center mt-5">
               BridgeAPI is a serverless integration platform that lets you
               connect your apps through event-driven workflows.
@@ -107,7 +120,11 @@
           <div class="row">
             <!-- TODO: Mobile size -->
             <div class="col-md-3">
-              <nav id="case-study-nav" class="sticky-top top-25">
+              <nav
+                id="case-study-nav"
+                class="sticky-top top-25"
+                style="opacity: 0"
+              >
                 <ul>
                   <li class="mb-2">
                     <a href="#introduction" class="case-study-anchor">
@@ -157,6 +174,7 @@
               <section id="introduction">
                 <h1 class="case-study-h1">1. Introduction</h1>
                 <h2 class="case-study-h2">1.1 BridgeAPI</h2>
+
                 <p>
                   BridgeAPI is a free, open source web developer tool that
                   receives, filters and forwards HTTP requests. This combination
@@ -189,7 +207,7 @@
                 <i>Postman</i>
                 <img
                   src="./images/postman.png"
-                  class="img-fluid mb-3 h-75 d-block"
+                  class="img-fluid mb-3 h-75 d-block border-radius-10"
                 />
 
                 <p>
@@ -221,7 +239,7 @@
                 <i>Hookbin.com</i>
                 <img
                   src="./images/hookbin.png"
-                  class="img-fluid mb-3 h-25 w-75 d-block"
+                  class="mx-auto img-fluid mb-3 h-25 w-75 d-block border-radius-10"
                 />
                 <p>
                   Lastly, there are apps that provide for workflows by providing
@@ -232,12 +250,12 @@
                 <i>Pipedream</i>
                 <img
                   src="./images/pipedream.png"
-                  class="img-fluid mb-3 w-75 d-block"
+                  class="mx-auto img-fluid mb-3 w-75 d-block border-radius-10"
                 />
                 <i>Zapier</i>
                 <img
                   src="./images/zapier.png"
-                  class="img-fluid mb-3 w-75 h-25 d-block"
+                  class="mx-auto img-fluid mb-3 w-75 h-25 d-block border-radius-10"
                 />
 
                 <p>
@@ -289,7 +307,7 @@
 
                 <img
                   src="./images/url_and_features.png"
-                  class="img-fluid mb-3"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
                 />
 
                 <p>
@@ -317,7 +335,7 @@
 
                 <img
                   src="./images/api_stat.png"
-                  class="mb-3 w-50 mx-auto d-block"
+                  class="mb-3 w-50 mx-auto d-block border-radius-10"
                 />
 
                 <p>
@@ -369,7 +387,10 @@
                   environmental variables.
                 </p>
 
-                <img src="./images/env_variables.png" class="img-fluid mb-3" />
+                <img
+                  src="./images/env_variables.png"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
+                />
 
                 <p>
                   Environmental variables are scoped to the bridge rather than
@@ -391,14 +412,17 @@
                   save action and cannot be viewed thereafter, leaving users
                   with the option of either referencing, deleting or reassigning
                   them. For reasons of brevity and familiarity, we selected
-                  “$env” as the name for referencing the environmental variable
-                  namespace, which users can do either from the header fields or
-                  in the payload. If a "JWT-secret" key was stored as an
-                  environmental variable, it would thus be accessible using the
-                  “$env.JWT-secret” syntax.
+                  <code>$env</code> as the name for referencing the
+                  environmental variable namespace, which users can do either
+                  from the header fields or in the payload. If a "JWT-secret"
+                  key was stored as an environmental variable, it would thus be
+                  accessible using the <code>$env.JWT-secret</code> syntax.
                 </p>
 
-                <img src="./images/headers.png" class="img-fluid mb-3" />
+                <img
+                  src="./images/headers.png"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
+                />
 
                 <h2 class="case-study-h2">2.2 Payload</h2>
 
@@ -417,18 +441,21 @@
                   more manageable interface.
                 </p>
 
-                <img src="./images/payload.png" class="img-fluid mb-3" />
+                <img
+                  src="./images/payload.png"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
+                />
 
                 <p>
                   To aid the user, we set a default payload to be edited or
-                  tested as is, along with a JSON linter. The “$payload” syntax
-                  accesses the inbound request payload, so in the above example
-                  “$payload.message” accesses a “message” key at the highest
-                  level of the inbound request payload, while
-                  “$payload.nested.message” plucks the value referenced by the
-                  “message” key of the “nested” object. As in the header fields,
-                  “$env'' syntax could likewise be applied to reference
-                  environmental variables within the payload.
+                  tested as is, along with a JSON linter. The
+                  <code>$payload</code> syntax accesses the inbound request
+                  payload, so in the above example <code>$payload.message</code> accesses a
+                  <code>message</code> key at the highest level of the inbound request
+                  payload, while <code>$payload.nested.message</code> plucks the value
+                  referenced by the <code>message</code> key of the <code>nested</code> object. As in
+                  the header fields, <code>$env</code> syntax could likewise be applied to
+                  reference environmental variables within the payload.
                 </p>
 
                 <h2 class="case-study-h2">2.3 Actions</h2>
@@ -440,7 +467,10 @@
                   requests to its endpoint.
                 </p>
 
-                <img src="./images/actions.png" class="img-fluid mb-3" />
+                <img
+                  src="./images/actions.png"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
+                />
 
                 <p>
                   Actions to the bridge are all collected within an “Actions”
@@ -629,7 +659,7 @@
                   indicating environment variables.
                   <img
                     src="./images/parse_value.png"
-                    class="mx-auto d-block w-50 h-25"
+                    class="mx-auto d-block w-50 h-25 border-radius-10"
                   />
                 </p>
 
@@ -640,7 +670,7 @@
                   apply Rails’ built-in ActiveSupport::MessageEncryptor.
                   <img
                     src="./images/fetch_env_variable.png"
-                    class="mx-auto d-block w-75 h-25"
+                    class="mx-auto d-block w-75 h-25 border-radius-10"
                   />
                 </p>
 
@@ -649,7 +679,7 @@
                   represented by the user_data parameter.
                   <img
                     src="./images/parse_payload.png"
-                    class="mx-auto d-block w-75 h-25"
+                    class="mx-auto d-block w-75 h-25 border-radius-10"
                   />
                 </p>
 
@@ -661,7 +691,7 @@
                   function
                   <img
                     src="./images/parse_value_2.png"
-                    class="mx-auto d-block w-50 h-25"
+                    class="mx-auto d-block w-50 h-25 border-radius-10"
                   />
                   while if it includes “$payload” then we call a
                   fetch_payload_data method that returns the referenced inbound
@@ -669,7 +699,7 @@
                   iterate in order to return the value of the innermost key.
                   <img
                     src="./images/fetch_payload_data.png"
-                    class="mx-auto d-block w-75 h-25"
+                    class="mx-auto d-block w-75 h-25 border-radius-10"
                   />
                 </p>
               </section>
@@ -997,14 +1027,6 @@
         </div>
       </section>
       <!-- End of Main Body -->
-
-      <footer class="mt-auto text-white-50">
-        <p class="mb-0" style="background-color: black">
-          Cover template for
-          <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
-          by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
-        </p>
-      </footer>
     </div>
   </body>
 </html>
