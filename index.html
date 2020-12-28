@@ -587,6 +587,29 @@
                 </p>
 
                 <p>
+                  The following diagram illustrates the processing of an event.
+                  Once an inbound request arrives, the EventsController inspects
+                  that both a valid JSON web token is attached and that the
+                  endpoint parameter matches an existing bridge endpoint, in
+                  which case it returns an HTTP response with the status code of
+                  202. It then delegates all further business logic to the
+                  Sidekiq background process, which promptly pushes a new job to
+                  the Redis jobs queue with the id of the newly created Event
+                  object. As each job is popped from the jobs queue, an HTTP
+                  request object is generated using Ruby’s built-in Net::HTTP
+                  library and then sent to the outbound URL endpoint for the
+                  bridge to which the event belongs. Lastly, it handles the
+                  response and saves it to the database, while, if the response
+                  was unsuccessful, it reassigns the job to the jobs queue if
+                  further retries are configured.
+                </p>
+
+                <img
+                  src="./images/architecture/event_diagram.svg"
+                  class="mx-auto img-fluid"
+                />
+
+                <p>
                   The result is a job queue system that runs in tandem with our
                   main Rails API server that can easily scale horizontally and
                   vertically. [ Visual idea: Rails - Sidekiq - Redis interaction
@@ -986,7 +1009,7 @@
                   </li>
                   <li>
                     <a href="https://blog.postman.com/api-growth-rate/">
-                      API Growth Continues to Skyrocket in2020<sup>[2]</sup>
+                      API Growth Continues to Skyrocket in 2020<sup>[2]</sup>
                     </a>
                   </li>
                   <li>
