@@ -346,7 +346,7 @@
                   completed but with a response code equal to or greater than
                   300. While redirect responses (300s) could be defined as
                   successful, we chose to handle them as unsuccessful to account
-                  for temporary redirects, whereby a retry could conceivably
+                  for temporary redirects, whereby a later retry could conceivably
                   generate a response code in the 200s. The reason we included
                   the retry feature was to let the user set the importance of
                   completing the outbound request so that five retries could be
@@ -404,7 +404,7 @@
                   recollect them. While it could be slightly inconvenient to
                   duplicate environmental variables for different bridges, we
                   accept this tradeoff as they’re only expected to be set
-                  infrequently, typically only once defining a bridge.
+                  infrequently, typically only once when defining a bridge.
                 </p>
                 <p>
                   To best protect the data, an environmental variable’s values
@@ -576,7 +576,13 @@
                 </p>
 
                 <p>
-                  Secondly, Sidekiq ships with a monitoring dashboard that lets
+                  While a third-party library, Sidekiq is proven to integrate well
+                  with Rails and is marketed as “Simple, efficient background
+                  processing for Ruby”. It runs concurrently and uses threads to
+                  handle simultaneously jobs in the same process. Another reason
+                  for choosing Sidekiq is performance, estimated to be up to
+                  twenty times faster than alternative background processors.
+                  In addition, Sidekiq ships with a monitoring dashboard that lets
                   us view jobs in its queue, ongoing jobs, and other information
                   useful to debugging - a feature that allowed us to develop our
                   business logic quicker than if we were without the dashboard
@@ -650,9 +656,9 @@
                 <p>
                   The above metric [TODO: import metrics image] shows metric
                   scores for the event page loading in production. First
-                  Contentful Paint (FCP) marks when the first text or images is
-                  visible to the user, while Time to Interactive (TTI) is the
-                  time taken for the page to become fully interactive. According
+                  Contentful Paint (FCP) records how soon the first text or images is
+                  visible to the user, while Time to Interactive (TTI) measures the
+                  time until the page becomes fully interactive. According
                   to statistics from the HTTP Archive, “sites performing in the
                   ninety-ninth percentile render FCP in about 1.5 seconds...TTI
                   in about 2.2 seconds”<sup>[4][5]</sup>, which means that our
@@ -812,7 +818,7 @@
                 <p>
                   One avenue of improvement to the user experience is to include
                   multiple data formats for receiving and forwarding requests.
-                  Right now, it’s only JSON-compatible, but XML could be
+                  Currently, it’s only JSON-compatible, but XML could be
                   extended with minimal effort, although it would deviate
                   slightly from the minimalist aesthetic of the bridge page.
                 </p>
@@ -826,8 +832,8 @@
                   tools and multi-step workflow tools. Still, it could be
                   justified by user demand. In its current iteration, a
                   workaround is to define multiple bridges as endpoints for the
-                  same webhook that could trigger numerous actions with the same
-                  request - a feasible solution as long as each request is
+                  same webhook that could thereby trigger numerous actions with the 
+                  same request - a feasible solution as long as each request is
                   independent of the outcome of other requests. [ Visual idea:
                   workaround in action vs sequential workflow ]
                 </p>
