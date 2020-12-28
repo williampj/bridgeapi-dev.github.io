@@ -346,13 +346,13 @@
                   completed but with a response code equal to or greater than
                   300. While redirect responses (300s) could be defined as
                   successful, we chose to handle them as unsuccessful to account
-                  for temporary redirects, whereby a later retry could conceivably
-                  generate a response code in the 200s. The reason we included
-                  the retry feature was to let the user set the importance of
-                  completing the outbound request so that five retries could be
-                  set for consequential bridges or in cases where the receiving
-                  API is less reliable. [Visual idea: code snippet for retries
-                  functionality].
+                  for temporary redirects, whereby a later retry could
+                  conceivably generate a response code in the 200s. The reason
+                  we included the retry feature was to let the user set the
+                  importance of completing the outbound request so that five
+                  retries could be set for consequential bridges or in cases
+                  where the receiving API is less reliable. [Visual idea: code
+                  snippet for retries functionality].
                 </p>
 
                 <p>
@@ -576,20 +576,20 @@
                 </p>
 
                 <p>
-                  While a third-party library, Sidekiq is proven to integrate well
-                  with Rails and is marketed as “Simple, efficient background
-                  processing for Ruby”. It runs concurrently and uses threads to
-                  handle simultaneously jobs in the same process. Another reason
-                  for choosing Sidekiq is performance, estimated to be up to
-                  twenty times faster than alternative background processors.
-                  In addition, Sidekiq ships with a monitoring dashboard that lets
-                  us view jobs in its queue, ongoing jobs, and other information
-                  useful to debugging - a feature that allowed us to develop our
-                  business logic quicker than if we were without the dashboard
-                  or had to implement one ourselves. The final reason for using
-                  Sidekiq is its focus on distributed systems. A single Redis
-                  cache - the cache used by Sidekiq - can issue jobs to numerous
-                  Sidekiq server instances.
+                  While a third-party library, Sidekiq is proven to integrate
+                  well with Rails and is marketed as “Simple, efficient
+                  background processing for Ruby”. It runs concurrently and uses
+                  threads to handle simultaneously jobs in the same process.
+                  Another reason for choosing Sidekiq is performance, estimated
+                  to be up to twenty times faster than alternative background
+                  processors. In addition, Sidekiq ships with a monitoring
+                  dashboard that lets us view jobs in its queue, ongoing jobs,
+                  and other information useful to debugging - a feature that
+                  allowed us to develop our business logic quicker than if we
+                  were without the dashboard or had to implement one ourselves.
+                  The final reason for using Sidekiq is its focus on distributed
+                  systems. A single Redis cache - the cache used by Sidekiq -
+                  can issue jobs to numerous Sidekiq server instances.
                 </p>
 
                 <p>
@@ -656,15 +656,15 @@
                 <p>
                   The above metric [TODO: import metrics image] shows metric
                   scores for the event page loading in production. First
-                  Contentful Paint (FCP) records how soon the first text or images is
-                  visible to the user, while Time to Interactive (TTI) measures the
-                  time until the page becomes fully interactive. According
-                  to statistics from the HTTP Archive, “sites performing in the
-                  ninety-ninth percentile render FCP in about 1.5 seconds...TTI
-                  in about 2.2 seconds”<sup>[4][5]</sup>, which means that our
-                  FCP load of 600 ms and TTI of 1.2 seconds are both faster than
-                  99 percent of websites. This performance can significantly be
-                  attributed to the decision to use jsonb.
+                  Contentful Paint (FCP) records how soon the first text or
+                  images is visible to the user, while Time to Interactive (TTI)
+                  measures the time until the page becomes fully interactive.
+                  According to statistics from the HTTP Archive, “sites
+                  performing in the ninety-ninth percentile render FCP in about
+                  1.5 seconds...TTI in about 2.2 seconds”<sup>[4][5]</sup>,
+                  which means that our FCP load of 600 ms and TTI of 1.2 seconds
+                  are both faster than 99 percent of websites. This performance
+                  can significantly be attributed to the decision to use jsonb.
                 </p>
 
                 <h2 class="case-study-h2">4.3 Parsing</h2>
@@ -766,6 +766,10 @@
                   price jumps for common features as reported for other PaaS
                   such as Heroku.<sup>[6]</sup>
                 </p>
+                <img
+                  src="./images/architecture/backend.svg"
+                  class="mx-auto d-block img-fluid h-25 w-75"
+                />
                 <h2 class="case-study-h2">5.3 Redis server</h2>
                 <p>
                   While we tried to apply a serverless solution to the greatest
@@ -791,6 +795,10 @@
                   AWS to handle database scaling and monitoring for us.
                 </p>
                 <h2 class="case-study-h2">5.5 AWS Lambda</h2>
+                <img
+                  src="./images/architecture/frontend.png"
+                  class="mx-auto img-fluid"
+                />
                 <p>
                   Finally, we are able to leverage a serverless service in the
                   form of AWS Lambda for the NextJS frontend, whereby we’re
@@ -809,6 +817,10 @@
                   in load from anywhere as the API server can be replicated to
                   any region within minutes.
                 </p>
+                <img
+                  src="./images/architecture/full.png"
+                  class="mx-auto img-fluid"
+                />
               </section>
               <!-- End of 5. CLOUD HOSTING -->
 
@@ -832,10 +844,10 @@
                   tools and multi-step workflow tools. Still, it could be
                   justified by user demand. In its current iteration, a
                   workaround is to define multiple bridges as endpoints for the
-                  same webhook that could thereby trigger numerous actions with the 
-                  same request - a feasible solution as long as each request is
-                  independent of the outcome of other requests. [ Visual idea:
-                  workaround in action vs sequential workflow ]
+                  same webhook that could thereby trigger numerous actions with
+                  the same request - a feasible solution as long as each request
+                  is independent of the outcome of other requests. [ Visual
+                  idea: workaround in action vs sequential workflow ]
                 </p>
               </section>
               <!-- End of FUTURE WORK -->
