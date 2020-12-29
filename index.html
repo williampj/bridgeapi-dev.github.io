@@ -351,22 +351,39 @@
                   we included the retry feature was to let the user set the
                   importance of completing the outbound request so that five
                   retries could be set for consequential bridges or in cases
-                  where the receiving API is less reliable. [Visual idea: code
-                  snippet for retries functionality].
+                  where the receiving API is less reliable.
+                </p>
+                <p>
+                  The following code snippet represents the formula for exponential
+                  backoff between each retry:
+                  <code
+                    >(retry_count ** 4) + 15 + (rand(30) * (retry_count +
+                    1))</code
+                  >
+                  With 5 retries, the attempts will be spread out over nearly 11 minutes.
+                  <pre>
+                    # | Next retry backoff | Total waiting time
+                    -------------------------------------------
+                    1 |     0d  0h  0m 30s |     0d  0h  0m 30s
+                    2 |     0d  0h  0m 46s |     0d  0h  1m 16s
+                    3 |     0d  0h  1m 16s |     0d  0h  2m 32s
+                    4 |     0d  0h  2m 36s |     0d  0h  5m  8s
+                    5 |     0d  0h  5m 46s |     0d  0h 10m 54s                 
+                  </pre>
                 </p>
 
                 <p>
                   In addition, users can decide between an instant forwarding of
-                  the request or a delay of 15 minutes, 30 minutes, 1 hour, or 1
-                  day. We decided it would be logical for certain workflows to
-                  insert a delay between links in a workflow chain. For example,
-                  if a user wanted to snooze all forwarding requests of a bridge
-                  for a day, the 1 day delay option would ensure that all
-                  incoming requests are received and held until the following
-                  day. Another advantage is that it gives the user time to abort
-                  or deactivate the bridge if circumstances during the delay
-                  period call for it. [Visual idea: code snippet - Sidekiq delay
-                  call].
+                  the request or manually setting a delay of 15 minutes, 30
+                  minutes, 1 hour, or 1 day before the first request attempt. We
+                  decided it would be logical for certain workflows to include a
+                  delay between links in a workflow chain. For example, if a
+                  user wanted to snooze all forwarding requests of a bridge for
+                  a day, the 1 day delay option would ensure that all incoming
+                  requests are received and held until the following day.
+                  Another advantage is that it gives the user time to abort or
+                  deactivate the bridge if circumstances during the delay period
+                  call for it. [Visual idea: code snippet - Sidekiq delay call].
                 </p>
 
                 <p>
@@ -378,8 +395,7 @@
                   be the guaranteed delay between the incoming webhook and the
                   <i>first</i>
                   forward request attempt. The delay between retries is of
-                  lesser importance. [Visual idea - Sidekiq algorithm for retry
-                  intervals].
+                  lesser importance. 
                 </p>
                 <p>
                   In order to include sensitive information in the body or
