@@ -23,7 +23,8 @@ function fadeIn(el, display) {
 
 function handleCaseStudyNav() {
   const caseStudyNav = document.getElementById('case-study-nav');
-  const caseStudyNavVisible = () => window.pageYOffset >= 700;
+  const caseStudyStart = document.getElementById('case-study');
+  const caseStudyNavVisible = () => window.pageYOffset >= caseStudyStart.offsetTop - 200;
 
   /**
    * Handles Showing/Hiding Navbar
