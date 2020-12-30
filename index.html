@@ -55,9 +55,10 @@
 
   <body class="d-flex">
     <div class="logo-links">
-      <!-- <p id="redpoint-logo">
-        <img src="./images/logos/redpoint-brand-logo_plane-only.png" />
-      </p> -->
+      <p id="burger-menu">
+        <img src="./images/icons/menu.svg" width="35" />
+      </p>
+
       <a href="https://github.com/bridgeapi-dev" target="_blank">
         <img
           src="./images/logos/github_black.png"
@@ -66,6 +67,76 @@
         />
       </a>
     </div>
+
+    <!-- MAIN NAV -->
+    <nav id="site-navigation" style="background-color: white; display: none">
+      <ul class="reset-ul">
+        <div class="top-nav">
+          <li class="no-bullet">
+            <a href="https://bridgeapi-dev.github.io" class="main-nav-link"
+              >HOME</a
+            >
+          </li>
+
+          <li class="no-bullet">
+            <a href="#team" class="main-nav-link">TEAM</a>
+          </li>
+
+          <li class="no-bullet">
+            <a
+              href="https://bridgeapi.dev"
+              class="main-nav-link"
+              target="_blank"
+              >TRY NOW</a
+            >
+          </li>
+        </div>
+
+        <li id="mobile-nav-li" class="no-bullet">
+          <nav id="case-study-mobile">
+            <ul>
+              <li class="mb-2">
+                <a href="#introduction" class="case-study-anchor">
+                  INTRODUCTION
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#user-experience" class="case-study-anchor">
+                  USER EXPERIENCE
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#frontend-architecture" class="case-study-anchor">
+                  FRONTEND ARCHITECTURE
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#system-architecture" class="case-study-anchor">
+                  SYSTEM ARCHITECTURE
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#cloud-hosting" class="case-study-anchor">
+                  CLOUD HOSTING
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#future-work" class="case-study-anchor">
+                  FUTURE WORK
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="#team" class="case-study-anchor"> THE TEAM </a>
+              </li>
+              <li class="mb-2">
+                <a href="#references" class="case-study-anchor"> REFERENCES </a>
+              </li>
+            </ul>
+          </nav>
+        </li>
+      </ul>
+    </nav>
+    <!-- END OF MAIN NAV -->
 
     <div class="h-100">
       <!-- Cover -->
@@ -91,18 +162,20 @@
       <!-- End of Cover -->
 
       <!-- Section something -->
-      <section class="text-center" style="color:#184d47">
+      <section class="text-center" style="color: #184d47">
         <div style="background-color: white">
-          <div class="row" style="max-width: 100%;">
-            <div class="col-md-6">
+          <div class="row" style="max-width: 100%">
+            <div class="col-md-6 col-sm-12">
               <img
                 src="./images/first.png"
-                class="img-fluid my-5 mx-4 d-block border-radius-10"
+                class="img-fluid border-radius-10"
               />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <h1 class="my-4">Connect Nearly Any App</h1>
-              <p class="mx-3 px-5" style="font-size: 1.5rem;">BridgeAPI empowers you to easily bridge two incompatible apps.</p>
+              <p class="mx-3 px-5" style="font-size: 1.5rem">
+                BridgeAPI empowers you to easily bridge two incompatible apps.
+              </p>
             </div>
           </div>
         </div>
@@ -112,15 +185,20 @@
       <!-- Section something -->
       <section class="text-center text-white">
         <div style="background-color: #96bb7c">
-          <div class="row" style="max-width: 100%;">
-            <div class="col-md-6">
+          <div class="row" style="max-width: 100%">
+            <div class="col-md-6 col-sm-12">
               <h1 class="my-4 px-5">Easy Setup. Unlimited Possibilities</h1>
-              <p class="px-5" style="font-size: 2rem;">Behind most services is an API. Having the ability to effortlessly and quickly bridge them unlocks unlimited possibilities—all without ever needing to set up a custom server.</p>
+              <p class="px-5" style="font-size: 2rem">
+                Behind most services is an API. Having the ability to
+                effortlessly and quickly bridge them unlocks unlimited
+                possibilities—all without ever needing to set up a custom
+                server.
+              </p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <img
                 src="./images/create bridge.gif"
-                class="img-fluid my-5 d-block border-radius-10"
+                class="img-fluid border-radius-10"
               />
             </div>
           </div>
@@ -183,7 +261,7 @@
             </div>
             <!-- CASE STUDY -->
             <div id="main-case-study" class="col-md-9 col-sm-12">
-              <h1>Case Study</h1>
+              <h1 id="case-study">Case Study</h1>
               <!-- 1. INTRODUCTION -->
               <section id="introduction">
                 <h1 class="case-study-h1">1. Introduction</h1>
@@ -218,18 +296,18 @@
                 <h2 class="case-study-h2">1.3 Current Tools</h2>
                 <p>
                   Among developer tools used to <i>send</i> API requests,
-                  Postman is by far the most utilized.
-                  It lets users select the request type and endpoint and a host
-                  of optional settings, including parameters, headers, and body.
-                  It also allows for pre-request scripts, whereby a request can
-                  be delayed, or more advanced features like regularly scheduled
-                  requests. The response is subsequently rendered with
-                  corresponding status, time, size, and body, among other data.
-                  Postman is very intuitive to use and practically covers every
-                  conceivable aspect of an API request. Yet, it is limited in so
-                  far that any workflow involving Postman must originate with a
-                  Postman request - making it more useful as a testing tool for
-                  an API interface. Any need to integrate workflows triggered by
+                  Postman is by far the most utilized. It lets users select the
+                  request type and endpoint and a host of optional settings,
+                  including parameters, headers, and body. It also allows for
+                  pre-request scripts, whereby a request can be delayed, or more
+                  advanced features like regularly scheduled requests. The
+                  response is subsequently rendered with corresponding status,
+                  time, size, and body, among other data. Postman is very
+                  intuitive to use and practically covers every conceivable
+                  aspect of an API request. Yet, it is limited in so far that
+                  any workflow involving Postman must originate with a Postman
+                  request - making it more useful as a testing tool for an API
+                  interface. Any need to integrate workflows triggered by
                   webhooks will, therefore, require other tools.
                 </p>
 
@@ -343,14 +421,16 @@
                   where the receiving API is less reliable.
                 </p>
                 <p>
-                  The following code snippet represents the formula for exponential
-                  backoff between each retry:
-                  <code
-                    >(retry_count ** 4) + 15 + (rand(30) * (retry_count +
-                    1))</code
-                  ><br/> 
-                  With 5 retries, the attempts will be spread out over nearly 11 minutes.
-                  <pre>
+                  The following code snippet represents the formula for
+                  exponential backoff between each retry:
+                  <code>
+                    (retry_count ** 4) + 15 + (rand(30) * (retry_count + 1))
+                  </code>
+                  <br />
+
+                  With 5 retries, the attempts will be spread out over nearly 11
+                  minutes.
+                  <!-- <pre>
                     # | Next retry backoff | Total waiting time
                     -------------------------------------------
                     1 |     0d  0h  0m 30s |     0d  0h  0m 30s
@@ -358,7 +438,7 @@
                     3 |     0d  0h  1m 16s |     0d  0h  2m 32s
                     4 |     0d  0h  2m 36s |     0d  0h  5m  8s
                     5 |     0d  0h  5m 46s |     0d  0h 10m 54s                 
-                  </pre>
+                  </pre> -->
                 </p>
 
                 <p>
@@ -384,7 +464,7 @@
                   be the guaranteed delay between the incoming webhook and the
                   <i>first</i>
                   forward request attempt. The delay between retries is of
-                  lesser importance. 
+                  lesser importance.
                 </p>
                 <p>
                   In order to include sensitive information in the body or
@@ -429,7 +509,6 @@
                   key were stored as an environmental variable, it would thus be
                   accessible using the <code>$env.JWT-secret</code> syntax.
                 </p>
-
 
                 <h2 class="case-study-h2">2.2 Payload</h2>
 
@@ -625,7 +704,7 @@
                 <p>
                   The result is a job queue system that runs in tandem with our
                   main Rails API server that can easily scale horizontally and
-                  vertically. 
+                  vertically.
                 </p>
 
                 <h2 class="case-study-h2">4.2 Database Schema</h2>
@@ -636,43 +715,52 @@
                   design envisioned separate tables for most data elements of an
                   event:
                 </p>
-                <img src='./images/architecture/complex_erd.svg' class='mx-auto d-block img-fluid h-75 w-75'>
+                <img
+                  src="./images/architecture/complex_erd.svg"
+                  class="mx-auto d-block img-fluid h-75 w-75"
+                />
 
                 <p>
-                  An implication of this would have been long join-queries to fetch all relevant data of an event. 
+                  An implication of this would have been long join-queries to
+                  fetch all relevant data of an event.
                 </p>
 
                 <p>
-                  Such queries would not only be cumbersome to work with, but also slow to
-                  execute, and tax the database needlessly. A better solution
-                  was to make use of PostgreSQL’s jsonb data type that stores
-                  JSON data. Hstore, which stores data as key-value pairs, would
-                  also have been useful data is manipulated after saving to the
-                  database since this would not require deserialization. Yet, it
-                  would require serialization before sending it, which increases
-                  memory usage and costs. Because events in our implementation
-                  are never edited and their individual parts never queried, we
-                  opted to pool all event data into a single JSON data structure
-                  to always be pulled from the database and sent to the frontend
-                  as is. 
+                  Such queries would not only be cumbersome to work with, but
+                  also slow to execute, and tax the database needlessly. A
+                  better solution was to make use of PostgreSQL’s jsonb data
+                  type that stores JSON data. Hstore, which stores data as
+                  key-value pairs, would also have been useful data is
+                  manipulated after saving to the database since this would not
+                  require deserialization. Yet, it would require serialization
+                  before sending it, which increases memory usage and costs.
+                  Because events in our implementation are never edited and
+                  their individual parts never queried, we opted to pool all
+                  event data into a single JSON data structure to always be
+                  pulled from the database and sent to the frontend as is.
                 </p>
-                <img src='./images/architecture/simple_erd.svg' class='mx-auto d-block img-fluid h-75 w-75'>
+                <img
+                  src="./images/architecture/simple_erd.svg"
+                  class="mx-auto d-block img-fluid h-75 w-75"
+                />
 
                 <p>
-                  [ Visual idea: FCP (First Contentful Paint) - page load
-                  metrics ]
-                  The above metric [TODO: import metrics image] shows metric
-                  scores for the event page loading in production. First
-                  Contentful Paint (FCP) records how soon the first text or
-                  images is visible to the user, while Time to Interactive (TTI)
-                  measures the time until the page becomes fully interactive.
+                  The metric below shows metric scores for the event page
+                  loading in production. First Contentful Paint (FCP) records
+                  how soon the first text or images is visible to the user.
                   According to statistics from the HTTP Archive, “sites
                   performing in the ninety-ninth percentile render FCP in about
-                  1.5 seconds...TTI in about 2.2 seconds”<sup>[4][5]</sup>,
-                  which means that our FCP load of 600 ms and TTI of 1.2 seconds
-                  are both faster than 99 percent of websites. This performance
-                  can significantly be attributed to the decision to use jsonb.
+                  1.5 seconds”<sup>[4][5]</sup>, which means that our FCP load
+                  of 600 ms makes us faster than 99 percent of websites. While
+                  there are numerous factors in FCP performance, this
+                  performance can significantly be attributed to the decision to
+                  use jsonb.
                 </p>
+
+                <img
+                  src="./images/lighthouse-results.png"
+                  class="mx-auto img-fluid border-radius-10"
+                />
 
                 <h2 class="case-study-h2">4.3 Parsing</h2>
                 <p>
@@ -771,7 +859,10 @@
                   easier for a small team such as ours to manage it. Also, it
                   has transparent, and linear pricing rather than exponential
                   price jumps for common features as reported for other PaaS
-                  such as Heroku.<sup>[6]</sup>
+                  such as Heroku.<sup>[6]</sup> Elastic Beanstalk managers our
+                  load balancer along with autoscaling our EC2 instances. We
+                  then needed a redis & postgres server to complete our backend
+                  architecture.
                 </p>
                 <img
                   src="./images/architecture/backend.svg"
