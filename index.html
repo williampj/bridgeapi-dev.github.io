@@ -378,7 +378,7 @@
 
                 <p>
                   In addition to providing a BridgeAPI endpoint, the outbound
-                  (forwarding) URL endpoint and method dropdown fields
+                  (forwarding) URL endpoint (1) and method dropdown (2) fields
                   constitute the minimum viable settings for the workflow to
                   function. While any HTTP request can be selected, we set the
                   default to POST as we envision forwarding data in a request
@@ -386,7 +386,7 @@
                 </p>
 
                 <p>
-                  The user can set any number of headers, but BridgeAPI is
+                  The user can set any number of headers (3), but BridgeAPI is
                   opinionated regarding the content type, which is hardcoded to
                   application/json. The following chart from
                   <i>ProgrammableWeb</i> between March 2018 and March 2020 shows
@@ -404,18 +404,18 @@
                 />
 
                 <p>
-                  Delays and retries are the two optional ‘extras’ in the bridge
-                  configuration. A bridge allows for 0, 1, 3, and 5 retries,
-                  where a retry is triggered when a response to an outbound
-                  request is unsuccessful. We define an unsuccessful request as
-                  any request that is either incomplete due to an error or that
-                  completed but with a response code equal to or greater than
-                  300. While redirect responses (300s) could be defined as
-                  successful, we chose to handle them as unsuccessful to account
-                  for temporary redirects, whereby a later retry could
-                  conceivably generate a response code in the 200s. The reason
-                  we included the retry feature was to let the user set the
-                  importance of completing the outbound request so that five
+                  Delays (4) and retries (5) are the two optional ‘extras’ in
+                  the bridge configuration. A bridge allows for 0, 1, 3, and 5
+                  retries, where a retry is triggered when a response to an
+                  outbound request is unsuccessful. We define an unsuccessful
+                  request as any request that is either incomplete due to an
+                  error or that completed but with a response code equal to or
+                  greater than 300. While redirect responses (300s) could be
+                  defined as successful, we chose to handle them as unsuccessful
+                  to account for temporary redirects, whereby a later retry
+                  could conceivably generate a response code in the 200s. The
+                  reason we included the retry feature was to let the user set
+                  the importance of completing the outbound request so that five
                   retries could be set for consequential bridges or in cases
                   where the receiving API is less reliable.
                 </p>
@@ -451,7 +451,7 @@
                   requests are received and held until the following day.
                   Another advantage is that it gives the user time to abort or
                   deactivate the bridge if circumstances during the delay period
-                  call for it. [Visual idea: code snippet - Sidekiq delay call].
+                  call for it.
                 </p>
 
                 <p>
@@ -585,46 +585,35 @@
                 <h1 class="case-study-h1">3. Frontend Architecture</h1>
                 <h2 class="case-study-h2">3.1 NextJS</h2>
                 <p>
-                  Frontend frameworks have become an integral part of enterprise
-                  web development. We selected NextJS as the optimal framework
-                  for building out our React frontend because it leverages the
-                  benefits of client-side rendered (CSR) apps, such as
-                  responsiveness to user activity and decreased server load, as
-                  well as benefits of server-side rendered (SSR) apps such as
-                  search engine optimization (SEO) and fast initial page loads.
-                  Added advantages include ease-of-use, comprehensive
-                  documentation, and an active community. Applying NextJS, our
-                  initial page load is server-side rendered while assets and
-                  pre-rendered HTML for linked pages are loaded on the client,
-                  offering users the experience of a single-page app (SPA). [
-                  Visual idea: diagram showing initial page request and
+                  We selected NextJS as the optimal framework for building out
+                  our React frontend because it leverages the benefits of
+                  client-side rendered (CSR) apps, such as responsiveness to
+                  user activity and decreased server load, as well as benefits
+                  of server-side rendered (SSR) apps such as search engine
+                  optimization (SEO) and fast initial page loads. Applying
+                  NextJS, our initial page load is server-side rendered while
+                  assets and pre-rendered HTML for linked pages are loaded on
+                  the client, offering users the experience of a single-page app
+                  (SPA). [ Visual idea: diagram showing initial page request and
                   subsequent requests of pre-rendered pages ]
                 </p>
 
                 <h2 class="case-study-h2">3.2 Payload Editor</h2>
                 <p>
-                  A crucial element of the app on the frontend is the
-                  functionality and user-friendliness of the payload editor.
-                  Since the editor should only support JSON, we had the option
-                  of choosing a simple JSON editor for React, such as
-                  react-json-editor and react-json-view, or more fully-featured,
-                  multi-language-supporting editors such as CodeMirror, Ace, and
-                  Monaco. We decided to use an editor that offers multi-language
-                  support to ease future extensions to other languages and
-                  provide a better IDE experience. We chose CodeMirror, a text
-                  editor written in JavaScript for the browser because it is
-                  battle-tested, contains the features we sought, yet lighter
-                  weight than Ace and Monaco (that power VSCode and Cloud9,
-                  respectively), which makes it a better fit for our use cases
-                  of rendering multiple code editors on a single page with
-                  different purposes. The react-codemirror2 wrapper for React
-                  facilitated a smooth integration as a React component. [Visual
-                  idea: CodeMirror implementation code snippet ]
+                  Even though the editor only requires JSON support, we decided
+                  to use an editor that offers multi-language support to ease
+                  future extensions to other languages. We chose CodeMirror, a
+                  text editor written in JavaScript for the browser, because it
+                  is lighter weight than alternative options such as Ace and
+                  Monaco, which makes it a better fit for our use cases of
+                  rendering multiple code editors on a single page with
+                  different purposes. [Visual idea: CodeMirror implementation
+                  code snippet ]
                 </p>
 
                 <p>
                   The versatility of CodeMirror furthermore lets us configure it
-                  as read-only for inspecting past events and editable for
+                  as read-only for inspecting past events yet editable for users
                   configuring a bridge, as well as interfacing it with a form
                   component when needed. Note that CodeMirror does not offer
                   support for Server-Side Rendering (SSR), but as we employ
@@ -654,16 +643,14 @@
                 <p>
                   We needed a way to process events concurrently without holding
                   up the single-threaded server, and for this, a background
-                  processor was required. While Rails ships with ActiveJob, this
-                  built-in processor is ill-suited for production since it
-                  enqueues jobs in RAM, causing jobs to be cleared if the
-                  process is interrupted or if the server is reset.
+                  processor was required. While Rails ships with ActiveJob, we
+                  chose not to use this built-in processor since it enqueues
+                  jobs in RAM, causing jobs to be cleared if the process is
+                  interrupted or if the server is reset.
                 </p>
 
                 <p>
-                  While a third-party library, Sidekiq is proven to integrate
-                  well with Rails and is marketed as “Simple, efficient
-                  background processing for Ruby”. It runs concurrently and uses
+                  We're using Sidekiq instead, which runs concurrently and uses
                   threads to handle simultaneously jobs in the same process.
                   Another reason for choosing Sidekiq is performance, estimated
                   to be up to twenty times faster than alternative background
@@ -729,14 +716,15 @@
                   also slow to execute, and tax the database needlessly. A
                   better solution was to make use of PostgreSQL’s jsonb data
                   type that stores JSON data. Hstore, which stores data as
-                  key-value pairs, would also have been useful data is
-                  manipulated after saving to the database since this would not
-                  require deserialization. Yet, it would require serialization
-                  before sending it, which increases memory usage and costs.
-                  Because events in our implementation are never edited and
-                  their individual parts never queried, we opted to pool all
-                  event data into a single JSON data structure to always be
-                  pulled from the database and sent to the frontend as is.
+                  key-value string pairs, would have been a viable solution if
+                  we needed to manipulate data after saving it to the database,
+                  since this would not require deserialization. Yet, this
+                  approach would require serialization before sending it, which
+                  increases memory usage and costs. Because events in our
+                  implementation are never edited and their individual parts
+                  never queried, we opted to pool all event data into a single
+                  JSON data structure to always be pulled from the database and
+                  sent to the frontend as is.
                 </p>
                 <img
                   src="./images/architecture/simple_erd.svg"
