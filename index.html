@@ -256,6 +256,15 @@
                     </a>
                   </li>
                 </ul>
+
+                <div style="padding-left: 2rem; padding-top: 2rem">
+                  <a
+                    href="https://bridgeapi.dev"
+                    class="try-now"
+                    target="_blank"
+                    >Try BridgeAPI</a
+                  >
+                </div>
               </nav>
             </div>
             <!-- CASE STUDY -->
@@ -756,78 +765,6 @@
                 <img
                   src="./images/lighthouse-results.png"
                   class="mx-auto img-fluid border-radius-10 mb-3"
-                />
-
-                <h2 class="case-study-h2">4.3 Parsing</h2>
-                <p>
-                  To implement the app, there were numerous coding challenges
-                  related to directing the workflow of a triggered bridge, not
-                  least of which was the parsing of outbound headers (to
-                  substitute environment variables) and outbound payload (to
-                  substitute inbound payload variables and environment
-                  variables). In addition, some values must be encrypted - to
-                  prevent them from being saved in clear text - and filtered for
-                  the user interface.
-                </p>
-
-                <p>
-                  To parse headers, we inspect for the presence of the
-                  <code>$env</code> indicating environment variables.
-                </p>
-
-                <img
-                  src="./images/parse_value.png"
-                  class="mx-auto d-block w-50 h-25 border-radius-10 mb-3"
-                />
-
-                <p>
-                  The <code>fetch_environment_variable</code> method then
-                  ensures that <code>$env</code> references an actual key and
-                  fetches it from the database, and decrypts it. To encrypt and
-                  decrypt environment variables, we apply Rails’ built-in
-                  <code>ActiveSupport::MessageEncryptor</code>.
-                </p>
-
-                <img
-                  src="./images/fetch_env_variable.png"
-                  class="mx-auto d-block w-75 h-25 border-radius-10 mb-3"
-                />
-
-                <p>
-                  For the payload, we iterate through the raw JSON as
-                  represented by the <code>user_data</code> parameter.
-                </p>
-
-                <img
-                  src="./images/parse_payload.png"
-                  class="mx-auto d-block w-75 h-25 border-radius-10 mb-3"
-                />
-
-                <p>
-                  If the value includes a <code>$env</code> string, we pass it
-                  to the same method as with the parsing of headers. If it’s a
-                  hash, we recursively call the
-                  <code>parse_payload!</code> function again, if it’s an array,
-                  we iterate and pass each value to the
-                  <code>parse_payload!</code> function.
-                </p>
-
-                <img
-                  src="./images/parse_value_2.png"
-                  class="mx-auto d-block w-50 h-25 border-radius-10 mb-3"
-                />
-
-                <p>
-                  While if it includes <code>$payload</code>, we call a
-                  <code>fetch_payload_data</code> method that returns the
-                  referenced inbound value. To account for possible nested
-                  payload values, we iterate in order to return the value of the
-                  innermost key.
-                </p>
-
-                <img
-                  src="./images/fetch_payload_data.png"
-                  class="mx-auto d-block w-75 h-25 border-radius-10 mb-3"
                 />
               </section>
               <!-- End of 4. SYSTEM ARCHITECTURE -->

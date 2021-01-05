@@ -172,6 +172,19 @@ nav ul li {
   font-weight: 600;
 }
 
+.try-now {
+  color: #184d47;
+  border: 1px solid #184d47;
+  padding: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.try-now:hover {
+  color: white;
+  background-color: #184d47;
+}
+
 /* Media Queries */
 /* xs */
 @media (min-device-width: 0) and (max-device-width: 575px) {
@@ -185,10 +198,6 @@ nav ul li {
 
   .cover-logo {
     max-width: 80%;
-  }
-
-  #github-logo {
-    display: none;
   }
 
   #case-study-mobile {
