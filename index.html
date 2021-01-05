@@ -293,8 +293,8 @@
                   between 2017 and 2020.
                   <sup>[2]</sup>
                   The integral role API requests play in the developing API
-                  economy demands developers’ tools to send, receive, monitor,
-                  and chain API requests.
+                  economy demands developer tools to send, receive, monitor, and
+                  chain API requests.
                 </p>
 
                 <h2 class="case-study-h2">1.3 Current Tools</h2>
@@ -320,25 +320,23 @@
                   Hookbin.com is one such tool that provides a URL endpoint to
                   receive webhooks, which can then be inspected upon reception.
                   Users can configure an automatic response that can be
-                  hardcoded or include data from the incoming request.
+                  hardcoded or include data from the incoming request in the
+                  response.
                 </p>
                 <p>
                   Lastly, some apps provide for workflows by providing URL
                   endpoints that, when pinged, trigger a user-defined workflow.
                   Zapier, IFTTT, and Pipedream are examples within this
-                  category.
-                </p>
-
-                <p>
-                  These fully-fledged sites are built to integrate large numbers
-                  of predefined apps, which are selected with a click and the
-                  granting of permission to access the external app from the
-                  workflow site. With this access granted, any number of events
-                  (not merely webhooks) within the external app can trigger the
-                  user-defined workflow. These sites are therefore popular with
-                  retail users since the intricacies of API requests are
-                  abstracted away. Furthermore, these sites are proprietary,
-                  involving a limited free tier and scaled paid tiers.
+                  category. These fully-fledged sites are built to integrate
+                  large numbers of predefined apps, which are selected with a
+                  click and the granting of permission to access the external
+                  app from the workflow site. With this access granted, any
+                  number of events (not merely webhooks) within the external app
+                  can trigger the user-defined workflow. These sites are
+                  therefore popular with retail users since the intricacies of
+                  API requests are abstracted away. Furthermore, these sites are
+                  proprietary, involving a limited free tier and scaled paid
+                  tiers.
                 </p>
 
                 <img
@@ -354,7 +352,7 @@
                   space as an open-source developer tool to establish workflows.
                   It maintains the simplicity of the purely sending or receiving
                   API developer tools while combining the functionality of both.
-                  Similar to the developer tools, BridgeAPI requests no
+                  Similar to the developer tools, BridgeAPI requires no
                   permissions but entrusts the user with configuring the
                   endpoint, headers, and body of an API request. As a
                   functioning workflow tool, BridgeAPI can act as a switchboard
@@ -459,17 +457,6 @@
                 </p>
 
                 <p>
-                  When the delay and retry options are combined, the delay
-                  period between an unsuccessful request and subsequent retries
-                  will grow exponentially with each retry as per the default
-                  logic in the background job library applied (Sidekiq). We
-                  accept this default logic because the user’s main concern will
-                  be the guaranteed delay between the incoming webhook and the
-                  <i>first</i>
-                  forward request attempt. The delay between retries is of
-                  lesser importance.
-                </p>
-                <p>
                   In order to include sensitive information in the body or
                   headers of an outbound request, we allow the user to store
                   environmental variables.
@@ -524,14 +511,7 @@
                   GET requests will be useful when users are more interested in
                   assessing responses than in forwarding data. Yet, most bridges
                   are expected to be POST requests and thus require a defined
-                  payload in the request body. We contemplated two options for
-                  this feature: a two-column table filled out with keys on the
-                  left and values on the right. This approach, however, would be
-                  complicated by the presence of nested values that would
-                  require multiple dropdowns and soon become unwieldy.
-                  Therefore, we chose a second option of requiring a raw JSON
-                  payload in a code editor since this delivers a cleaner and
-                  more manageable interface.
+                  payload in the request body.
                 </p>
 
                 <img
@@ -575,7 +555,7 @@
                   deactivate), or aborting current ongoing requests in the jobs
                   queue - which is made up of requests being delayed, retried,
                   or that still need to be executed. This feature set is simple,
-                  yet paired with its neighboring save button for editing, it
+                  yet paired with its adjacent save button for editing, it
                   exhausts all essential configuration needs of a defined
                   bridge.
                 </p>
@@ -603,8 +583,7 @@
                   NextJS, our initial page load is server-side rendered while
                   assets and pre-rendered HTML for linked pages are loaded on
                   the client, offering users the experience of a single-page app
-                  (SPA). [ Visual idea: diagram showing initial page request and
-                  subsequent requests of pre-rendered pages ]
+                  (SPA).
                 </p>
 
                 <h2 class="case-study-h2">3.2 Payload Editor</h2>
@@ -616,8 +595,7 @@
                   is lighter weight than alternative options such as Ace and
                   Monaco, which makes it a better fit for our use cases of
                   rendering multiple code editors on a single page with
-                  different purposes. [Visual idea: CodeMirror implementation
-                  code snippet ]
+                  different purposes.
                 </p>
 
                 <p>
@@ -630,17 +608,20 @@
                   asynchronously using React’s UseEffect hook in order to avoid
                   slowing down page loads. To improve the user experience, we
                   added a loading spinner displayed in place of each editor
-                  until that editor is populated. [ Visual idea: loading spinner
-                  ]
+                  until that editor is populated.
                 </p>
+
+                <img
+                  src="./images/editor.png"
+                  class="mx-auto img-fluid mb-3 border-radius-10"
+                />
 
                 <p>
                   The result is an intuitive editor containing aids that users
                   have come to expect from editors like VSCode, including a
                   full-screen mode for expansive payload editing, syntax
                   highlighting, JSON linting, auto-indent, and active line
-                  highlighter. [ Visual idea: gif of payload in action showing
-                  syntax, linter, active line et al. ]
+                  highlighter.
                 </p>
               </section>
               <!-- End of 3. FRONTEND ARCHITECTURE -->
@@ -660,7 +641,7 @@
 
                 <p>
                   We're using Sidekiq instead, which runs concurrently and uses
-                  threads to handle simultaneously jobs in the same process.
+                  threads to handle jobs simultaneously in the same process.
                   Another reason for choosing Sidekiq is performance, estimated
                   to be up to twenty times faster than alternative background
                   processors. In addition, Sidekiq ships with a monitoring
@@ -673,28 +654,27 @@
                   can issue jobs to numerous Sidekiq server instances.
                 </p>
 
-                <p>
-                  The following diagram illustrates the processing of an event.
-                  Once an inbound request arrives, the EventsController inspects
-                  that both a valid JSON web token is attached and that the
-                  endpoint parameter matches an existing bridge endpoint, in
-                  which case it returns an HTTP response with the status code of
-                  202. It then delegates all further business logic to the
-                  Sidekiq background process, which promptly pushes a new job to
-                  the Redis jobs queue with the id of the newly created Event
-                  object. As each job is popped from the jobs queue, an HTTP
-                  request object is generated using Ruby’s built-in Net::HTTP
-                  library and then sent to the outbound URL endpoint for the
-                  bridge to which the event belongs. Lastly, it handles the
-                  response and saves it to the database, while, if the response
-                  was unsuccessful, it reassigns the job to the jobs queue if
-                  further retries are configured.
-                </p>
-
                 <img
                   src="./images/architecture/event_diagram.svg"
                   class="mx-auto img-fluid"
                 />
+
+                <p>
+                  This diagram illustrates the processing of an event. Once an
+                  inbound request arrives, the EventsController inspects that
+                  both a valid JSON web token is attached and that the endpoint
+                  parameter matches an existing bridge endpoint, in which case
+                  it returns an HTTP response with the status code of 202. It
+                  then delegates all further business logic to the Sidekiq
+                  background process, which promptly pushes a new job to the
+                  Redis jobs queue with the id of the newly created Event
+                  object. As each job is shifted from the jobs queue, an HTTP
+                  request object is generated using Ruby’s built-in Net::HTTP
+                  library and then sent to the designated outbound URL endpoint.
+                  Lastly, it handles the response and saves it to the database,
+                  while, if the response was unsuccessful, it reassigns the job
+                  to the jobs queue if further retries are configured.
+                </p>
 
                 <p>
                   The result is a job queue system that runs in tandem with our
@@ -741,9 +721,9 @@
                 />
 
                 <p>
-                  The metric below shows metric scores for the event page
-                  loading in production. First Contentful Paint (FCP) records
-                  how soon the first text or images is visible to the user.
+                  The metric below shows metric scores for loading of the event
+                  page in production. First Contentful Paint (FCP) records how
+                  soon the first text or images is visible to the user.
                   According to statistics from the HTTP Archive, “sites
                   performing in the ninety-ninth percentile render FCP in about
                   1.5 seconds”<sup>[4][5]</sup>, which means that our FCP load
@@ -928,9 +908,9 @@
                 <p>
                   One avenue of improvement to the user experience is to include
                   multiple data formats for receiving and forwarding requests.
-                  Currently, it’s only JSON-compatible, but XML could be
-                  extended with minimal effort, although it would deviate
-                  slightly from the minimalist aesthetic of the bridge page.
+                  Currently, it’s only JSON-compatible, but it could be extended
+                  to XML, although it would deviate slightly from the minimalist
+                  aesthetic of the bridge page.
                 </p>
 
                 <p>
@@ -944,8 +924,7 @@
                   workaround is to define multiple bridges as endpoints for the
                   same webhook that could thereby trigger numerous actions with
                   the same request - a feasible solution as long as each request
-                  is independent of the outcome of other requests. [ Visual
-                  idea: workaround in action vs sequential workflow ]
+                  is independent of the outcome of other requests.
                 </p>
               </section>
               <!-- End of FUTURE WORK -->
